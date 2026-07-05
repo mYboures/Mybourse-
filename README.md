@@ -1,2 +1,2 @@
 # Mybourse-
-scanner toutes les plateforme a la recherche de bouse
+scanne toutes les plateformes a la recherche de bouse
