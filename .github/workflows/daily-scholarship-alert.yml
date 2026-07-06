@@ -1,0 +1,47 @@
+name: Alerte quotidienne bourses génie civil
+
+on:
+  schedule:
+    # 8h00 UTC chaque jour = 9h00 en France l'hiver / 10h00 l'été (UTC+1/+2).
+    # Adapte l'heure selon ton fuseau si besoin (l'horaire GitHub est TOUJOURS en UTC).
+    - cron: '0 8 * * *'
+  workflow_dispatch: {}   # permet de lancer le scan manuellement depuis l'onglet "Actions"
+
+permissions:
+  contents: write   # necessaire pour pouvoir sauvegarder la base de deduplication
+
+jobs:
+  scan-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le scan et envoyer les alertes
+        env:
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
+        run: python scholarship_alert.py
+
+      - name: Sauvegarder la base et publier le site web
+        run: |
+          git config user.name "scholarship-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add seen_scholarships.db docs/
+          git diff --cached --quiet || git commit -m "Mise a jour quotidienne (donnees + site web) [skip ci]"
+          git push
