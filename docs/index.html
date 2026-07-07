@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bourses Génie Civil - Tableau de bord</title>
+<style>
+    body { font-family: -apple-system, Segoe UI, Arial, sans-serif; background: #f4f6f8; margin: 0; padding: 24px; color: #1a1a1a; }
+    h1 { text-align: center; margin-bottom: 4px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto; }
+    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.15s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+    .card-img { width: 100%; height: 150px; object-fit: cover; display: block; }
+    .card-img-placeholder { display: flex; align-items: center; justify-content: center; font-size: 40px; background: #e8edf3; }
+    .card-body { padding: 14px; }
+    .card-body h3 { font-size: 15px; margin: 0 0 6px 0; line-height: 1.3; }
+    .card-source { font-size: 12px; color: #888; margin: 0; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); align-items: center; justify-content: center; padding: 20px; z-index: 100; }
+    .modal-box { background: white; border-radius: 14px; max-width: 560px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 24px; position: relative; }
+    .modal-img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 14px; }
+    .modal-close { position: absolute; top: 14px; right: 14px; border: none; background: #eee; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 16px; }
+    .modal-meta { color: #888; font-size: 13px; margin: 4px 0 14px 0; }
+    .modal-summary { line-height: 1.5; margin-bottom: 20px; }
+    .apply-btn { display: inline-block; background: #2563eb; color: white; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .apply-btn:hover { background: #1d4ed8; }
+</style>
+</head>
+<body>
+    <h1>🎓 Bourses Génie Civil</h1>
+    <p class="subtitle">95 annonce(s) trouvée(s) au total — mis à jour le 07/07/2026 à 16:58</p>
+    <div class="grid">
+        
+        <div class="card" onclick="document.getElementById('modal-0').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Sonasid : Un nouvel élan porté par la reprise du BTP et une diversification stratégique - Boursenews.ma</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-1').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Le groupe TGCC lance deux nouvelles filiales internationales, en Guinée et en France - Le360</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-2').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Relance du BTP: la commande publique sera-t-elle suffisante ? - Boursenews.ma</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-3').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Les fondations privées pour financer vos études en école d’ingénieurs - Studyrama Grandes Ecoles</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-4').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>BTP : trois nouveaux présidents pour les électriciens, le gros œuvre et les travaux publics en Haute-Garonne - ladepeche.fr</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-5').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>BTP et matériaux de construction : une année record à 3,64 MMDH de bénéfices, grâce aux grands chantiers - Medias24</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-6').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Quand une PME veut donner une seconde vie aux déchets du BTP - ABC Bourse</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-7').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Les bourses récompensant les candidats des concours des écoles d'ingénieurs ou les mentions au bac - Studyrama Grandes Ecoles</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-8').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bouygues veut retirer Colas de la Bourse - L'Agefi</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-9').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>SGTM : l'IPO qui confirme la montée en puissance du BTP marocain - Hespress Français - Actualités du Maroc</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-10').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Pierre Gatimel élu président des Entreprises générales de France Midi-Pyrénées du BTP - ladepeche.fr</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-11').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse : les recettes de la réussite d’Eiffage, le trublion du BTP, qui va faire son entrée au CAC 40 - Le Figaro</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-12').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>En Allemagne, la révolution de l'IA crée de nouveaux champions en Bourse - Les Echos</h3>
+                <p class="card-source">Google News (bourse ingénieur BTP)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-13').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse d’études du gouvernement russe 2025 entièrement financée : programme Open Doors pour les étudiants internationaux - Gnatepe</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-14').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Opportunités: Des bourses d’études en intelligence spaciale 2024 disponibles - Gnatepe</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-15').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>UEMOA : appel à candidatures pour des bourses de financement d’études - Togo Daily News</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-16').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Appel à candidatures pour le financement des bourses d’excellence UEMOA pour la formation et la recherche 2024-2027 - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-17').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bénin : APPEL A CANDIDATURES POUR 102 BOURSES D'ETUDES AU MAROC 2025-2026 - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-18').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>APPEL À CANDIDATURES: PROGRAMME DE BOURSES D’EXCELLENCE UEMOA POUR LA FORMATION ET LA RECHERCHE ÉDITION 2025–2028 - La Nation Bénin</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-19').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>100 BOURSES de Formation professionnelle offertes par le Royaume du Maroc, postulez ici (02 juillet 2026) - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-20').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse d’études en Chine: Modalités et avantages - Le bled parle</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-21').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Togo : le ministère délégué, chargé de l'Enseignement Supérieur annonce l'ouverture de la bourse d'études Fonds Kubota au Japon 2026-2027 - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-22').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>20 bourses d’études ouvertes aux étudiants africains en 2026, INSCRIVEZ-VOUS DÈS AUJOURD'HUI - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-23').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Tikou Bélem, un burkinabè dans les mines d’or du Canada - leFaso.net - L'actualité au Burkina Faso</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-24').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Perspectives d’Avenir gratifie 64 jeunes congolais de bourses d’études - Vox Congo</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-25').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Haïti - FLASH : Critères d'admission aux bourses d’études en Formation Technique et Professionnelle d’Haïti Tec - HaitiLibre.com</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-26').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Congo – Éducation : La Fondation perspectives d’avenir offre des bourses d’études aux bacheliers de Dolisie - Les Echos du Congo Brazzaville</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-27').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>SETRAG : Des bourses d’études pour les bacheliers gabonais - - Gabon Actu</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-28').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Tout pour trouver des bourses d`études pour le Canada : Cliquez! - - Rezo Nòdwès</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-29').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Fraude au Bac: ce qu’on sait de l’étudiant qui a composé à la place de son ami - SeneNews</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-30').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Coopération/Burundi-Maroc : 130 bourses pour des étudiants burundais - IWACU</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-31').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Côte d'Ivoire ; Ce qu'il faut savoir pour l'octroi des Bourses d'études hors du pays en vue de l'année universitaire 2024-2025 - koaci.com</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-32').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>111 domaines d'études sont éligibles à des politiques de bourses spéciales. - Vietnam.vn</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-33').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Offre de bourses dans les domaines de l'agriculture, des Mathématiques, du Génie civil hydraulique et environnement et la Gouvernance universitaire - leFaso.net - L'actualité au Burkina Faso</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-34').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Un troisième récipiendaire de la région pour la bourse d’études d’Ashini Consultants - Le Quotidien</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-35').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses d’excellence UEMOA : financement Licence, Master et Doctorat - socialnetlink.org</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-36').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Un étudiant de l'Université des transports et des communications remporte une bourse de 20 000 euros pour étudier en France. - Vietnam.vn</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-37').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses, aides, prêts : financer ses études en école d’ingénieurs - Studyrama Grandes Ecoles</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-38').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Le Japon ouvre ses bourses d’études 2027-2028 aux étudiants marocains : conditions, modalités d’inscription et délais de candidature - Le Matin.ma</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-39').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses d’études nucléaires : l'excellence comme levier d’attractivité de la filière - info.gouv.fr</h3>
+                <p class="card-source">Google News (bourse d'étude génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-40').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Opportunité: l'UEMOA offre des bourses d’excellences 2023 - Gnatepe</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-41').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Appel à candidatures pour les bourses d’excellence de l’UEMOA - Gnatepe</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-42').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse d'études à l'étranger : Voici la liste des étudiants sélectionnés par le gouvernement togolais - l-frii.com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-43').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses d’études au Japon : le Togo ouvre les candidatures pour 2026–2027 - Icilome</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-44').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Appel à candidatures spécial pour le programme de Master et Doctorat de l’Université Panafricaine (PAU) de l’UNION AFRICAINE 2025 - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-45').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Opportunité d'études au Maroc : 50 bourses d'études supérieures disponibles pour les jeunes camerounais - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-46').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses d’études de l’École des sciences et de l’ingénierie de SLU 2024 - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-47').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>OFFRE DE 100 BOURSES D’ETUDES : PROGRAMME DE BOURSES INTERNATIONALES INSTITUT 2iE – MASTERCARD FOUNDATION - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-48').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>POSTULEZ pour la Bourse Erasmus Mundus 2026 en énergies renouvelables et construction durable - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-49').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Postulez maintenant à la Bourse Kipaji de l’Université de Twente, (2026-2027) - YOP L-FRII</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-50').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Embellie boursière annoncée pour Stroc Industrie - Le Matin.ma</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-51').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Haïti - Éducation : Les 104 bénéficiaires de bourse pour le Mexique bientôt connus - HaitiLibre.com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-52').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Burkina Faso : Une association aide des jeunes à obtenir des bourses d’études et des parrainages - Burkina24.com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-53').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>En 8 ans, la Bourse de sous-traitance et de partenariat du Cameroun a généré 242 contrats estimés à 41 milliards FCFA - Investir au Cameroun</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-54').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>La Fondation du Cégep récompense des étudiants d’exception - EnBeauce.Com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-55').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Jérôme Maheux décroche une bourse de Genivar - EnBeauce.Com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-56').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Le Cégep Beauce-Appalaches diplôme 692 finissants - L’Éclaireur Progrès</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-57').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Setrag offre 20 bourses d’études aux bacheliers gabonais - Gabonreview.com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-58').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse: Mediterrania Capital Partners officialise sa sortie totale de TGCC que le fonds qualifie de nouvelle &quot;licorne&quot; africaine&quot; - Boursenews.ma</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-59').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Enseignement supérieur : voici les critères qu’il faut pour faire certaines filières à l’université - Guinéenews</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-60').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Ciments du Maroc décroche en Bourse, les analystes y voient une opportunité - Medias24</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-61').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Deux étudiants en génie civil du Cégep Beauce-Appalaches décrochent des bourses - EnBeauce.Com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-62').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses Perspective Québec | Tuition &amp; Financial Aid - Concordia University</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-63').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse de Casablanca : la croissance s’installe, l’investissement repart - LesEco.ma</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-64').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>30 bourses d’études et 2 bourses de formation d’ingénieur offertes par l'Algérie aux étudiants Camerounais - Actu Cameroun</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-65').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Introduction en Bourse, acquisition de STAM-VIAS, 17.000 salariés: TGCC construit en grand - Le360</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-66').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse : AGR recommande de souscrire à l’IPO du groupe SGTM - La Vie éco</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-67').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Pomerleau propulse la relève en génie à l’UdeS - Université de Sherbrooke</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-68').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>13e édition de la Cérémonie de remise de bourses: l’excellence soulignée autrement - fsg.ulaval.ca</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-69').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Actions dans le nucléaire | Top 10 et comment investir - ig.com</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-70').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Une bourse, un nom, une rencontre, un avenir - Université de Sherbrooke</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-71').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>À qui appartiennent 20 des plus grandes entreprises de construction au monde ? - Construction Briefing</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-72').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Action Vinci : comment investir ? - Cafédelabourse</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-73').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Polytechnique étend son programme de bourses de la rose blanche à 14 femmes - Noovo Info</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-74').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Nouveau sommet en Bourse pour WSP Global - La Presse</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-75').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Les valeurs à suivre à la Bourse de Paris - Vendredi 24 novembre 2023 - Option Finance</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-76').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Alstom, Arcelormittal, Saint-Gobain : Ces groupes portés en Bourse par le &quot;quoi qu'il en coûte&quot; allemand - BFM Bourse</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-77').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>L'UO bat son record de lauréats Eiffel ! - Université d'Orléans</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-78').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Athlétisme. « Ça m’a fait grandir », Matthys Bourse veut bonifier son expérience américaine - Ouest-France</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-79').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Des étudiants en BTP et en Génie civil accèdent à une bourse - Moov.Mg</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-80').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>La Bourse de Paris attendue en petite baisse à l'ouverture - TradingView</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-81').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourse : ces valeurs du BTP à faire figurer sur votre liste d'achats 2016 - L'Express</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-82').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Nucléaire : EDF pourrait confier 10 Mds€ de génie civil de l'EPR2 à un groupement de cinq entreprises BTP, dont Vinci, Eiffage et Bouygues - Idéal Investisseur</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-83').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Une immersion scientifique francophone au cœur du programme Bourse de recherche Globalink pour la recherche et le développement en français - Agence Universitaire de la Francophonie</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-84').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Projets dans le domaine du béton : trois personnes étudiantes obtiennent des bourses - fsg.ulaval.ca</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-85').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Un ancien étudiant crée une bourse ad vitam - Département de génie civil et de génie du bâtiment - Université de Sherbrooke</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-86').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Vinci : Pourquoi les groupes de construction ont le vent en poupe en Bourse cette année? - BFM Bourse</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-87').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>L’Université d’Orléans brille à nouveau avec 8 lauréats de la prestigieuse bourse France Excellence Eiffel - Université d'Orléans</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-88').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Génie civil : Le Japon renouvelle son appui aux étudiants malgaches - Midi Madagasikara</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-89').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Construction : Les patrons anticipent une hausse de l’activité au T2-2026 - Boursenews.ma</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-90').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>SGTM prépare son entrée en Bourse pour honorer un carnet de commandes record - Hespress Français - Actualités du Maroc</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-91').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Deux étudiants de Polytechnique Montréal lauréats de la prestigieuse bourse d’études du Canada Vanier - Polytechnique Montréal</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-92').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>La SGTM prépare son introduction en bourse et accélère ses projets pour la Coupe du monde 2030 - برلمان.كوم</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-93').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Bourses destinées aux étudiants étrangers - Campus France</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+        <div class="card" onclick="document.getElementById('modal-94').style.display='flex'">
+            <div class="card-img card-img-placeholder">🎓</div>
+            <div class="card-body">
+                <h3>Eiffage se renforce au Luxembourg - Boursorama</h3>
+                <p class="card-source">Google News (bourse génie civil)</p>
+            </div>
+        </div>
+        
+    </div>
+    
+        <div id="modal-0" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-0').style.display='none'">✕</button>
+                
+                <h2>Sonasid : Un nouvel élan porté par la reprise du BTP et une diversification stratégique - Boursenews.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Sonasid : Un nouvel élan porté par la reprise du BTP et une diversification stratégique &amp;nbsp;&amp;nbsp; Boursenews.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxON1doekZWQWFkaWhnRTA5ejlWVHVhZVVrOGRzMksxNFJ3OGpFczJOZWVncnJtS0JpVHdiUGEwYkdQbkFGUEk3SklSbHVKQm5pdkZLNEx0d0VWVEtxLU9LYnhOMHNObjFITVgzdWo2dUJ6QlNjQk5MSFBLcnlGMVNKQ1J0Ul9nS2oxYmdCRkx5Ul9fVlFabGM3ckdOUlBTS0JQY283WGhTeG10cVlFdzZEem9ieXo3UlE?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-1" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-1').style.display='none'">✕</button>
+                
+                <h2>Le groupe TGCC lance deux nouvelles filiales internationales, en Guinée et en France - Le360</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Le groupe TGCC lance deux nouvelles filiales internationales, en Guinée et en France &amp;nbsp;&amp;nbsp; Le360</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxOM2Z5cXF2MXNaN2FtYVFldjAxdHBZOWlBZVltZW9HdXVxNDZ5LVp3eURUVHk5b1ljY3pvOXpseWR4bnl4LWNVUk9vM3JEMVkyS3o3X1Ffd05kemplcXMzU3R0eVhJMnk0bkl3dnd6Qkl2MThTUjJocTFxdThPdEozSWpyVk9iWlZKREwwRlNsSm9kZXFWTVhsbmZtRFpnUEJmdmRQTF9XbUlFS29DaGpQN3dmX28xdUI0QmRSVg?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-2" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-2').style.display='none'">✕</button>
+                
+                <h2>Relance du BTP: la commande publique sera-t-elle suffisante ? - Boursenews.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Relance du BTP: la commande publique sera-t-elle suffisante ? &amp;nbsp;&amp;nbsp; Boursenews.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPYk9wTUlOU1dKX28zUk4ydFJtaGJZd2hiel9mSVNqQm9ISGxyRW1SRktvbndfOVIzeFpaTS0zYXNBdUwyVGV0NVU4U01rTmRVTUFKeVNqd2pLUUlWZmZGV25pTlZQd3ZGend4MnV3VllUWDVCbDhFS2dqVlVPYkJNMWQ0dHlwcEYzZjlzT3did3VoenE0ejF4ZHJaaFo?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-3" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-3').style.display='none'">✕</button>
+                
+                <h2>Les fondations privées pour financer vos études en école d’ingénieurs - Studyrama Grandes Ecoles</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Les fondations privées pour financer vos études en école d’ingénieurs &amp;nbsp;&amp;nbsp; Studyrama Grandes Ecoles</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxQanpnZjVjLXFhRVZLcWtJX1ZDc0RfNjJmSFZxdnFJdlNHbU1hdVNOTk12d05zMFFoNnhCekw4R0RBbXJtS2JDZTNOY1BoNWtVQkJYUlpTblZNSGp0MGd6aXpZMEcxLVJaVzVRX0ZtOE5HWDJaSHFCd3UxTGFMcnBSVlVoMmhxM2o4SVpyUUZYdVFwQU56SjRPNG9vcVJzcVp2cW9wV3NRMlJMNERPTjBDZWlvSG1peHBXbTkyclgydU80c1dyZC1SRXRIX1JQaS13elJRaXU0dkRYX29rem9UTVpR?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-4" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-4').style.display='none'">✕</button>
+                
+                <h2>BTP : trois nouveaux présidents pour les électriciens, le gros œuvre et les travaux publics en Haute-Garonne - ladepeche.fr</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">BTP : trois nouveaux présidents pour les électriciens, le gros œuvre et les travaux publics en Haute-Garonne &amp;nbsp;&amp;nbsp; ladepeche.fr</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxQbDNvUUk0eVBfQXozYW1hcUt1QTVQVEpWRXBUaXV6UW5DMjJPSXJZeDNHU1V2a2piajhZZDJjTWVRV2NuNzduY2ktLVVkdnViNXVjMW1mY3BTTkRuNi1WemlnMnNjaXJBNW94SGtLQTBJb0c2cmUwZGp0TlhwajAwVG55MGp0bi1ZSjZCQ0lVYURNQ21pR01fdUZBM1IxYXZmeDRaQUlnU1k1ZVFwREFINEFaYzVJRlJfSzY5VV82WnRxbVpBcHJObUFrejBicFB6d0JtRTBWaGF6NFd4VkJxa0g5dnozS2hFSXFV?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-5" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-5').style.display='none'">✕</button>
+                
+                <h2>BTP et matériaux de construction : une année record à 3,64 MMDH de bénéfices, grâce aux grands chantiers - Medias24</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">BTP et matériaux de construction : une année record à 3,64 MMDH de bénéfices, grâce aux grands chantiers &amp;nbsp;&amp;nbsp; Medias24</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQeXcxdDhCVzFnSjVnRjlrR0xsLU9ISXVaY2lTMWpoV0h1U0hkTkNMaWhzckxodHRhZEhicFlKb2Y3VVFWajNlWlNQVFBLcnczV3BkZkJaNGVsS3FFT3oxNW90RE0xUnFWTUREVHdxMHM0Znc4NTBIcE5VbE9nOC1xRV91LWFnVElIbUZneHZMM0RnS0MzbFRkcDdMcGU0MktyRFh0ckNBQXB6SzUybHBkaG9NNzNLd2N1UWZrbVJPS2d3MU5nZE1YR1R1U2w5Zw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-6" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-6').style.display='none'">✕</button>
+                
+                <h2>Quand une PME veut donner une seconde vie aux déchets du BTP - ABC Bourse</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Quand une PME veut donner une seconde vie aux déchets du BTP &amp;nbsp;&amp;nbsp; ABC Bourse</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQSzNzSDA2eDdlTkZ0SFFVTWFqSlF4RWFCbWpaeTd0X2JDT3k5bmJQR0V0QmNmbXdqYlJOMTZtblRMc3JFbE1wT3A5ZUNQMk5mUEVVcjlyYW9oRmpPU296SXdjb01nSmFuTnQ5MTdwTFctYXQyYkpkcUZtcWs2dWlnTk1iYnlpOUlkOXRTZ0FZU3d3VUV2X25fLUtDOGJlWndwLW9F?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-7" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-7').style.display='none'">✕</button>
+                
+                <h2>Les bourses récompensant les candidats des concours des écoles d'ingénieurs ou les mentions au bac - Studyrama Grandes Ecoles</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Les bourses récompensant les candidats des concours des écoles d'ingénieurs ou les mentions au bac &amp;nbsp;&amp;nbsp; Studyrama Grandes Ecoles</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiiwJBVV95cUxPZExfY2hXYmltcjZjWGJPcE5rc2dTR1BUMTh0dDBMRE81RHhYRXY1ekk4OGg0OTR2bzJTQ1MycDZDNHB6YnRPTFlHeEZBQkdUX2NhWUZQYjZzQmtBSF9sVHQ0MFZGR3pkUWZxWFZKZmNMWi1JNFlYelpqNlg1bDNoSEJWQjZiYzdycW9BdktIVkw4WEktQ2JlbWZiaDZJYlJPQTFFQ0VJWmhFTTBuWVpXTEU5OC1WZDgzdzg1TVRlNXBmeUdYSmI2Q0VBa0tpSXFxRzJhZ3JwUDBIMEFxSDVBSVh1V2RnNENHc1dHVkFycHZlb25zNXZZS1BLdFZkZWZiWExBMlM2WElTMms?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-8" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-8').style.display='none'">✕</button>
+                
+                <h2>Bouygues veut retirer Colas de la Bourse - L'Agefi</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bouygues veut retirer Colas de la Bourse &amp;nbsp;&amp;nbsp; L'Agefi</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPSjNWX0JHcEMtMmhOXzQxVHhsSTlYT0ljMkdfVTVUUjdzMUJuQVhQeTVrUUpOdExscTRUckkzQmJpbFFnYm51MGxUbDRreHlVMHBQVm12QW5VY0gwVzJQS3BpLVI5Z056NVg0TWs5cTFKem93N0ZBNlZjZ0JNanZEN1B6Zjc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-9" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-9').style.display='none'">✕</button>
+                
+                <h2>SGTM : l'IPO qui confirme la montée en puissance du BTP marocain - Hespress Français - Actualités du Maroc</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">SGTM : l'IPO qui confirme la montée en puissance du BTP marocain &amp;nbsp;&amp;nbsp; Hespress Français - Actualités du Maroc</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMingFBVV95cUxQV0pIV0dpdEVLNFM5eC02aktod29zNW5sMmNqSjRLWkVjUFhTelQ5Nm9kUnBIb1h2LW13bUFDOVJaSnhqeVFvX29BZjVBNW9ockFQbW03bHY3NERoY3lEbzNOVjkyREhjc292V0d4VXNFSHdfV3NyV1hsMlE4QnpqTW5tcUprUE1OamlsdWVESHBXblM3YWFJcXI4MXNwdw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-10" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-10').style.display='none'">✕</button>
+                
+                <h2>Pierre Gatimel élu président des Entreprises générales de France Midi-Pyrénées du BTP - ladepeche.fr</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Pierre Gatimel élu président des Entreprises générales de France Midi-Pyrénées du BTP &amp;nbsp;&amp;nbsp; ladepeche.fr</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQSVJGSDE4a3czeWFUZGJZS3dZSkcxb3pxQjE1MlhPYTl5ajBtN3cyck9EZmF4UnYtX0E2bzVqQVZTcEZNUkJ3NDFrdVg0MlZheUlDX1dlYkRrd2Fsb2dBcklBTXkyMzM4TWwwakI4X3NMSW9ESTZnQ0RxR2xnYmE3NV9UWXgxS1ZQTFI3b1FsMEwxaEFIYVBwaExVcmRaZk04alo4WUFEMkhIaUtUcm41eEs2X3B2UDNNNmJmYTg3cldjV2tNLUtrWWptYl9mTlU?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-11" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-11').style.display='none'">✕</button>
+                
+                <h2>Bourse : les recettes de la réussite d’Eiffage, le trublion du BTP, qui va faire son entrée au CAC 40 - Le Figaro</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse : les recettes de la réussite d’Eiffage, le trublion du BTP, qui va faire son entrée au CAC 40 &amp;nbsp;&amp;nbsp; Le Figaro</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOV3QxaUdYQ09TMXpHQUFQeWMzeU51VlEtWEZPZVJjZHU3TGlZYXRPTDZYdzNydWpSUG42bDZUWng0bEVwOHVlaHdNbFlHcmVsWDkwS0ZJeldSUmpIcF9mYlR2SmgzY0QwWExsQnBSVjdBTmsxb1B2ZEhzUGxDeHI2empwTjJxYlFNTjRnbTlNME1DNDhidGc4dDhMX0dZMmdWRXlueHhSdTczQWlvY2pJbkZJN3B4TFVQRFBvY0VYMWstOG9vWkJTOEJ5cVhIYThLODRyZm53?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-12" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-12').style.display='none'">✕</button>
+                
+                <h2>En Allemagne, la révolution de l'IA crée de nouveaux champions en Bourse - Les Echos</h2>
+                <p class="modal-meta">Source : Google News (bourse ingénieur BTP) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">En Allemagne, la révolution de l'IA crée de nouveaux champions en Bourse &amp;nbsp;&amp;nbsp; Les Echos</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbGw1U2VXMGNCZ1RmUjZyQWRLa0xtV1VHdERNUzhtcjhBYjJVQXBHbFpubnhydFEyTF9DR1hjZmNZTDBLMVRzQUkwY0VvelctUGpVVlhsWUtPSk1JaU43b0cxNUw3bWR6ajBLYjVEQWRkZkEtSU5VOEx1MmJKODYtY2RtWUw5ME90aVVvNlVITERraEJBdHZsRm9feU92RE5JUGFOazh6Tm00YjlnYzBBQWRpcUFCVjJDWElCck5uRmFuV1Rqam84UFI2MnF3NXI5eVo4?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-13" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-13').style.display='none'">✕</button>
+                
+                <h2>Bourse d’études du gouvernement russe 2025 entièrement financée : programme Open Doors pour les étudiants internationaux - Gnatepe</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse d’études du gouvernement russe 2025 entièrement financée : programme Open Doors pour les étudiants internationaux &amp;nbsp;&amp;nbsp; Gnatepe</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWlpvWVgxZGdaV0hDX3hnN1d3cUhKWFZlcE5WZjRoQ2ZfUU90aHBsLXNjX05SQmxaUEZUTVdDWGsyUWNZNm03S2tRUVVxVTVucnByb3RoOTZGQWpoNDdwNUpUcjIyQnBNLWN3ZjM5Qk9teE9yX0Z0MFJZVVpqcG9DZDFWVERLRUQ0REd3dWtpaHVuNkVUcDcwQ0ZTX3RFYTllWlNkTnNXLVlKYkNzNHVfM0MwbllpZTJjR3pEaEpQRTZBMmN3MGFHT0l0Mjg0SU1BVE5vdQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-14" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-14').style.display='none'">✕</button>
+                
+                <h2>Opportunités: Des bourses d’études en intelligence spaciale 2024 disponibles - Gnatepe</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Opportunités: Des bourses d’études en intelligence spaciale 2024 disponibles &amp;nbsp;&amp;nbsp; Gnatepe</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNcy1Ma3BtRW9MaDRtbjFHV2tuQVlNbVdxNnhmcjBxM1hvcW11RUxaZUlvLTB3YVR2R2otaVNOTlBNTXFZV0lRSlNkRXl6N205cmJuTTkyckJnYWl0SHhBc0o2SGlrd2gwSVhuQnNWa0ZTbE5rSFl3aW9mTDlySGJSbXk4S0xOazVOT1dUNEpyZVFKTkhJSFpOdVlVbw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-15" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-15').style.display='none'">✕</button>
+                
+                <h2>UEMOA : appel à candidatures pour des bourses de financement d’études - Togo Daily News</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">UEMOA : appel à candidatures pour des bourses de financement d’études &amp;nbsp;&amp;nbsp; Togo Daily News</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5iclVmVGNfWU91My1WNnViVEV5Q2tBdnpjYThOTkMwaTZ6Y2x0VzlocVJzbkNMb3M1NGg3dmluR3FMS2xkX0dmTjhqcGhzYnhHeWJ3c1h6djdJcVR4VTVMNDBZS1lmaHoxbDZmRUhR?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-16" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-16').style.display='none'">✕</button>
+                
+                <h2>Appel à candidatures pour le financement des bourses d’excellence UEMOA pour la formation et la recherche 2024-2027 - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Appel à candidatures pour le financement des bourses d’excellence UEMOA pour la formation et la recherche 2024-2027 &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY2tXNzRaZTY2d25ncEpCVzdoMGlrbGc1RkgtTE9XbS1CLXVYYTRUaFdvTXZrTGw5d1lRcHZUd3otQ2tUZmZlT2lPWWRmNENGV0JBY2NYZUlNaURYOGw0dXlUaUJubGdXU0hTWjRwQzRNWjFZZmtzVlBULXV0UGxhd3lkenJBNTJkZ3NUVnB0WWF1dURoYTJQN2lZTTEwMVZTYmEwMHZDdm84YkJib2M2Q2N3WHV0OVg0OEQ1N0FuWjhMakJ1RjRjSVB1QmVHbksyUnY0Rm1sUERjSWhaZmNB?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-17" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-17').style.display='none'">✕</button>
+                
+                <h2>Bénin : APPEL A CANDIDATURES POUR 102 BOURSES D'ETUDES AU MAROC 2025-2026 - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bénin : APPEL A CANDIDATURES POUR 102 BOURSES D'ETUDES AU MAROC 2025-2026 &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQd2I0ZFJsaEZIU0FBZ1Z3SEVJOEIyREZGT2x0YlpJYnB3U2RFNWs2UW0teHJ3RlJqRk5Na1Uwc2pyb2o5SXJNLWNXYm03eUZrVHR0QWRuNm5hSmpwakxIMF9ORHRnUjN5aWVZQzlncnlfMi1KdlAzOFU5Z2U4Q0pUU244N2hLYmRIY19zLU9LcHN5cjRjdFlmYjRxbU9iY3lKcWJtYQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-18" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-18').style.display='none'">✕</button>
+                
+                <h2>APPEL À CANDIDATURES: PROGRAMME DE BOURSES D’EXCELLENCE UEMOA POUR LA FORMATION ET LA RECHERCHE ÉDITION 2025–2028 - La Nation Bénin</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">APPEL À CANDIDATURES: PROGRAMME DE BOURSES D’EXCELLENCE UEMOA POUR LA FORMATION ET LA RECHERCHE ÉDITION 2025–2028 &amp;nbsp;&amp;nbsp; La Nation Bénin</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOHF6LUc3eW96enRIMFdYbzRoTDhRR3RDU0w1LWdDTmtScU51YUdvZ3I1LVpXSDVzdWZUcjBHMkV6TGx5S2hHNGpsQXkzVzM4MzVVMm1teS1CN29wdWtmTXp5QVlkT2FwYUVYYXdzT2J5UDdsZVV1MzNIVS1JeG1GTzlEejVpOGdkQTI5amNfbUtvSE5wN0ZHcXFPV2swZVg1RmJVQ2EweFNzNkZyVlJzUndxZVJXSEZYWXdKeVd6c2FvY2dZcDBPQ3h2MnVtdHNBTXRsNnBDSQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-19" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-19').style.display='none'">✕</button>
+                
+                <h2>100 BOURSES de Formation professionnelle offertes par le Royaume du Maroc, postulez ici (02 juillet 2026) - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">100 BOURSES de Formation professionnelle offertes par le Royaume du Maroc, postulez ici (02 juillet 2026) &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNbUhwVXBtOEh5N2w5M0R4OXFnWmRkSWJxRjFpeTFYNlVkb3NwWlE1QnNid0xZRnUwLThQRGNrVDJLaEtOVmh4Z0MwdzhmM1dnaUhCWWZZLVc0ZkRuR25pQWVYRmRIWll0MlVNN3ZuX0ZKdl9VMEVhRDNJNmFQd3dHc1BnM0dYWDJVTmhJWHNWMlRRcl9jMHFiVWEtMnVmeWtFN3haRHd2bVZxWWVJZHpWamdNMzZSYW5qbW9QdTdBdm83RHFuVzdzWTdjd3ZIeEU?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-20" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-20').style.display='none'">✕</button>
+                
+                <h2>Bourse d’études en Chine: Modalités et avantages - Le bled parle</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse d’études en Chine: Modalités et avantages &amp;nbsp;&amp;nbsp; Le bled parle</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNbkpvNGY3YjdfZ0QzMHN1N0lRSjFqb08tVDcxY2VaTVlLR001NWxjdzRTV3FmWk03T0ZYNWJmRHNuYlVwb2EzS29zZHpkWjg0WnFiQmpFRFZwSFJUSkFQYXdNQkdac0NLdlhuQWRvMHhrMkYzZkdMcnh0MTA1amRlcXVRaVB4WXpfc1hsM25fbzVfWW40a2s4RnU4SVhSSEpV?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-21" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-21').style.display='none'">✕</button>
+                
+                <h2>Togo : le ministère délégué, chargé de l'Enseignement Supérieur annonce l'ouverture de la bourse d'études Fonds Kubota au Japon 2026-2027 - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Togo : le ministère délégué, chargé de l'Enseignement Supérieur annonce l'ouverture de la bourse d'études Fonds Kubota au Japon 2026-2027 &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi9gFBVV95cUxNVkcyM3Fia3U2V3d4d3lCU2dOa2l1RTE4akRVSWVUY0ZMdndRM2RMbWZVZkljTWVTaDk3UmRySDdaeXQtVERiTGF0c2s1d09NSVJfb3ZXWTNxV05wYW4xcGRSSXVDNUtsczkwV0F6UG1UN1Y4SUZvNXZmWUk0aTJWNGNZX3g5MTdyeGNYZEprenptb05ndzJ3RTJYN0Z5Vm5teXhIbUNBODVGWDdZc250WGdNcW9QaE42ZWNWVlotTEZDTEZHZUJqTnVCVE9CQUU1MVQyYjdmR054eWJRZmlSR2JXYTZvb1RPZVNKRzFaeWI5bnE1YlE?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-22" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-22').style.display='none'">✕</button>
+                
+                <h2>20 bourses d’études ouvertes aux étudiants africains en 2026, INSCRIVEZ-VOUS DÈS AUJOURD'HUI - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">20 bourses d’études ouvertes aux étudiants africains en 2026, INSCRIVEZ-VOUS DÈS AUJOURD'HUI &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNNG9BZ2hRZm9QX1NVc1hSZ0ZheDRZRVVYQkF6NDk5bVExWFhZWEZ5MF9PYWFXSHhKUk80amV6TjN2UUh1UTVHdHpmRFJTR2pSVTV3d056ODZVSXNqa3RYaTNEc3FmbkxBdmNaSkpLeVBIS3ktZEtKVzY5a0RTOWtSRWw4NmdPV1RBZkpvS2UycDR4RDZfOEFSQmpJVkdqVG9nQ3dvYWFWRW1LanZaSXFhMktBWm5LWXdrZVRpUWR3?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-23" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-23').style.display='none'">✕</button>
+                
+                <h2>Tikou Bélem, un burkinabè dans les mines d’or du Canada - leFaso.net - L'actualité au Burkina Faso</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Tikou Bélem, un burkinabè dans les mines d’or du Canada &amp;nbsp;&amp;nbsp; leFaso.net - L'actualité au Burkina Faso</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE5jRi1PRVNsVzBmVUtMa0lYVE9UdEhILXFFbHdIclVzQ09pVVJicFp5TTNOdEc5dEppaDV1OHV3YW1JUWN0NzNHWnJhQkNZX29lVWJMUmNtS2VhdmlLRTVPT0R3?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-24" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-24').style.display='none'">✕</button>
+                
+                <h2>Perspectives d’Avenir gratifie 64 jeunes congolais de bourses d’études - Vox Congo</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Perspectives d’Avenir gratifie 64 jeunes congolais de bourses d’études &amp;nbsp;&amp;nbsp; Vox Congo</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQaXFIdy1EcWVfbGFBeEhoYmxYZFlVM3lmU2U4TjJQc2Y4V3NIM3oxM2tuNFd2UU5mYkx4bUZET1hGWGpTV1lHRy1HTnhiYndWSmp0bE83eUdLdnlwMDZFVktLSE43X3pIWDA2aHVMSEk4VWZ1XzFGdDlnM3FiOUFIS3dacl8zdW1HX045LUcxcUliQdIBkgFBVV95cUxQaXFIdy1EcWVfbGFBeEhoYmxYZFlVM3lmU2U4TjJQc2Y4V3NIM3oxM2tuNFd2UU5mYkx4bUZET1hGWGpTV1lHRy1HTnhiYndWSmp0bE83eUdLdnlwMDZFVktLSE43X3pIWDA2aHVMSEk4VWZ1XzFGdDlnM3FiOUFIS3dacl8zdW1HX045LUcxcUliQQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-25" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-25').style.display='none'">✕</button>
+                
+                <h2>Haïti - FLASH : Critères d'admission aux bourses d’études en Formation Technique et Professionnelle d’Haïti Tec - HaitiLibre.com</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Haïti - FLASH : Critères d'admission aux bourses d’études en Formation Technique et Professionnelle d’Haïti Tec &amp;nbsp;&amp;nbsp; HaitiLibre.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPUUdfVHpWLXU5Y0JBa1NrQVlmU2J1ZkpPOU5EeDBvdXJYWE9jUTJGamxJNVVEREdxRk8yZjdJdEcyVkRTMDRnUXExSGo5YkpieFhIeF9GYkJSb0xzTlpVd3NXQWtoZTRfVkdycEFNZEo2R2lBVk9oWUpzbzlkV2R0UWhEWi1SQ2NnZExxakpuZkxCZG16aUpFdVNPMTdKWHJnNEpwUC1aLWVJMTNMY1NPUUNZaHY3NU14QThxS0lSdUJQVlhheVFMVHdxRUpNMUd0VWN6dnR3OG5uNHRTeHRxQTlCQ2Zjc2o1?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-26" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-26').style.display='none'">✕</button>
+                
+                <h2>Congo – Éducation : La Fondation perspectives d’avenir offre des bourses d’études aux bacheliers de Dolisie - Les Echos du Congo Brazzaville</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Congo – Éducation : La Fondation perspectives d’avenir offre des bourses d’études aux bacheliers de Dolisie &amp;nbsp;&amp;nbsp; Les Echos du Congo Brazzaville</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxPWW8zWGIxUktLb0M1UEhRcFA3Z0tjN0xXUVo5eVZBb09QTzNkSm8zbVpxSzFfRnJaUnU2ZVZDQzFGR2tsQW0tUnI4U2ZFY2l6UlFzNmZVOC1uLTZEMkxEZ0dObkJWOUNlSUpUWnZ6RUZIMGVmVW5aTE1wb1cwMi1hVzY4c1J2Z3FXclRIOG5oNzJCMXR4STFaWGpTeDBPcDEtemVZUWVGMkJJYTZtWnFxREd4ZWhYSmRoMGhhaFVaRndGSXdnMTRIbzNzZmlTeUw5R2dQNlNMaTRsQU4wM0M5TkpRRQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-27" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-27').style.display='none'">✕</button>
+                
+                <h2>SETRAG : Des bourses d’études pour les bacheliers gabonais - - Gabon Actu</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">SETRAG : Des bourses d’études pour les bacheliers gabonais - &amp;nbsp;&amp;nbsp; Gabon Actu</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPMWtjTVhDRXF5a1ppU2dPU2ZkbHVCT2ViRkQ5YXdLZzF0WjExSi1scVlaVWpZY2RFRWZHOHdQbjVfdVhXNkNuZ09sbnRlQ3BGVzRIMFowY0NLN196c0hMZnQ2T1RqNGxqMC00VFdHTnNEYmI2Q1dsVEdwNW5XbV9fS3oxcEJPVzQ1aERnRGNvNm04NHpBTURKZmRn?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-28" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-28').style.display='none'">✕</button>
+                
+                <h2>Tout pour trouver des bourses d`études pour le Canada : Cliquez! - - Rezo Nòdwès</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Tout pour trouver des bourses d`études pour le Canada : Cliquez! &amp;nbsp;&amp;nbsp; - Rezo Nòdwès</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxORC1wZk9LMFBkWWRpazhJV0tFWnRWUUtSa3gyWVZaSTJhVWhXU29IR2M0NTlSeElIc1d2bXpsTVByVk10UHFfcXg0QUpQSTRDODRjV2VDNmJhMzJEWWdfa2ZxbmVCQ3RqX3lRN2Z6eG9qckx3TUU4Z2lwU3JzMkYzLUNaZ1BNS0RhRDVwZzh5VzR4ODdfUVhz?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-29" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-29').style.display='none'">✕</button>
+                
+                <h2>Fraude au Bac: ce qu’on sait de l’étudiant qui a composé à la place de son ami - SeneNews</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Fraude au Bac: ce qu’on sait de l’étudiant qui a composé à la place de son ami &amp;nbsp;&amp;nbsp; SeneNews</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxORU5QSFFodkJ2R2xyMTl4U0Y4MWVRU2xPSi1FX255S0I1NGlOLWUtaTRXOVIwS0Q4NGhwUHJwbUxid1BLZ0FLeFZLdS02VEF4V0NLclFYSEU4ZXBQWURXQVZBdDJRRlZMd1BVdzlEa0t5V2o0TTVzWG1YdEZCYzV2WG1ZN0I2ZDJ3NG95OXRMVjU3QzJQWkxKNW1ZWVBlNS1iMkNoWXB0aVQ2aUh1MzdQMTJTTzRDelAyNktWVWFZd2VqOExqNHpZYU9SYw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-30" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-30').style.display='none'">✕</button>
+                
+                <h2>Coopération/Burundi-Maroc : 130 bourses pour des étudiants burundais - IWACU</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Coopération/Burundi-Maroc : 130 bourses pour des étudiants burundais &amp;nbsp;&amp;nbsp; IWACU</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMingFBVV95cUxQTnJuS1g5cUtyQkFqdnEwLW9ZRWtLMXMteGVReldPYVlUd2tyU2F1ancxZnZ2RF8wczhaUnlfM2k1dWZ3aWRwWDNXQWhnQUxjcjVfQUtTcjF3Q2tGLTZBcDdnTVpXX2Z6bk9sbWd6V2dISEh6bDI1ZlRRS2FsSGliUFQ1OGYwa1BsSkdOVlZkNEZTVUdqZUptMnA1cV9nZw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-31" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-31').style.display='none'">✕</button>
+                
+                <h2>Côte d'Ivoire ; Ce qu'il faut savoir pour l'octroi des Bourses d'études hors du pays en vue de l'année universitaire 2024-2025 - koaci.com</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Côte d'Ivoire ; Ce qu'il faut savoir pour l'octroi des Bourses d'études hors du pays en vue de l'année universitaire 2024-2025 &amp;nbsp;&amp;nbsp; koaci.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMingJBVV95cUxPa0JBT1FOOHVSV0wwQ1dXSDJoTXUwMlE3MVdGUmFVWFFCcjI0RDE3Wmppb2E4YmhqMmt3NzVocnBLaVZhbE9UVVpOaGNSWlhOLWhHQVNfVkdKUXROZG9aaGszZllLTkZYdzVwVmJpbzJGdTdEa2RFZEo1dXZkX25ZV09FeWFIaENLQ0dhY2IzblhSTHlhRGpsN0FwTzRHSnZoVDN3SDBlYUVoNVBqVmczUTlHbFRlZ0JRU2JBVWRWN1JkbC0td0x4V05CY1Q5LU5mZEpMc2hTaFpzeUZYaklLWHJrWDlfSEQ4QXdjSDR2Q3hGcENYem5PUkRkd1lmekJ0WnAxMUFiV18tbmdoYldIZDBKbi03NVdENG43TXJn?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-32" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-32').style.display='none'">✕</button>
+                
+                <h2>111 domaines d'études sont éligibles à des politiques de bourses spéciales. - Vietnam.vn</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">111 domaines d'études sont éligibles à des politiques de bourses spéciales. &amp;nbsp;&amp;nbsp; Vietnam.vn</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQX2l0WnJYMExtbXBLSG9paDhBS1V5aHV0d29TR3FHb04wdzBPOVR0RllUNWVLTG1tbTBzS1FTbmo3QnlsQXdzVTdab296Uk9JR1ZvUW1lTUQ3NjBfX01oQWtreWZnOE44RWhneTltQ0VKOWw2dzdMTWNaemRPOWlDMEpIVnQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-33" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-33').style.display='none'">✕</button>
+                
+                <h2>Offre de bourses dans les domaines de l'agriculture, des Mathématiques, du Génie civil hydraulique et environnement et la Gouvernance universitaire - leFaso.net - L'actualité au Burkina Faso</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Offre de bourses dans les domaines de l'agriculture, des Mathématiques, du Génie civil hydraulique et environnement et la Gouvernance universitaire &amp;nbsp;&amp;nbsp; leFaso.net - L'actualité au Burkina Faso</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE84ekVuenRzeGt0UEdnb3BCbGJiYllMcDFoRkt1Ti1rcC1fNzNLaFVLSmliWlF5NWh2WmQ1S0R5UndNc0w0LWZBRDFKblBWdUY3dHc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-34" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-34').style.display='none'">✕</button>
+                
+                <h2>Un troisième récipiendaire de la région pour la bourse d’études d’Ashini Consultants - Le Quotidien</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Un troisième récipiendaire de la région pour la bourse d’études d’Ashini Consultants &amp;nbsp;&amp;nbsp; Le Quotidien</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxNYTRPaFA1TUpYWjJpOFhTMmotOTVzcEkyVHI3VFVia1YyR0ZKOE5Xa0VIZk5jaXJ6OUROOTdzMGFacnQzOFowdlRGVW1sN0Z4TGVOdnl0cnpuTFYtVEVuZmNFOHJmVmV5RFE3NFFkRkl3ZFkyM2ExZ2JFM01ISUNndFRFOWRzdVVreVNfZzZpRmJtNXBnQ1pTX0RSaWZXRDVMUDJwOFRXc1RYVVpRVGEzalV4cTFUNnExeE1OWnNQcWxFMU90bWMtU1pmTHd1T2ROcUhCTDRTdklYVnVHYi1XT3RXd29YazhNQjJnRDBXakFUZTRrQkxJ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-35" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-35').style.display='none'">✕</button>
+                
+                <h2>Bourses d’excellence UEMOA : financement Licence, Master et Doctorat - socialnetlink.org</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses d’excellence UEMOA : financement Licence, Master et Doctorat &amp;nbsp;&amp;nbsp; socialnetlink.org</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQS1KR01EOTZ4RXFHVHpDUUstM3hNTFdneTB5dlE1XzJ3R21OQ1YzY3pkREhoZW5KdUIzeTU3YW93MlhyZGJia0dJVF90ZGl4MG5UN2w2UUk5UEFZcDRua0tmZ1dJMV9ETFcydV9ZR0g1clhVWlNNV0RWaHV6a1o2VHQwR3ozaFVGdGdPY1lDNEwxWnVjalAtb19DdEtWc2ZhdHBFckMxUXdUdw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-36" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-36').style.display='none'">✕</button>
+                
+                <h2>Un étudiant de l'Université des transports et des communications remporte une bourse de 20 000 euros pour étudier en France. - Vietnam.vn</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Un étudiant de l'Université des transports et des communications remporte une bourse de 20 000 euros pour étudier en France. &amp;nbsp;&amp;nbsp; Vietnam.vn</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPR2NxNnVTa3c4Wll6cVdkMmlBajdTa0JnWEY3ZjVMT1M1LWtmYjZTNk1qVUdQYVVLNGJ4MUQ0WHhWR3FINHNKU0sxaE81YkVsMEd4bHZtS3d1U1VGTGZXZS1YOWRPWUUxRmZ2cEJHaWhnakVQTVdwS2c2NGh3TzdOU0JQbTI0dnBkZnlUZl8zaEdOTnJEb3NoZQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-37" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-37').style.display='none'">✕</button>
+                
+                <h2>Bourses, aides, prêts : financer ses études en école d’ingénieurs - Studyrama Grandes Ecoles</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses, aides, prêts : financer ses études en école d’ingénieurs &amp;nbsp;&amp;nbsp; Studyrama Grandes Ecoles</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQMEJpOTA0cjFCcUVQRXJkd0EzX2RCWXBBMTVBcGFoUzU4UVdxaEtlTmpDcHpWVHgwSEFsbVM5cWRDVlVLcDRqZWlSaWdDTGlaaWJMbWo4Y3B2RDlHRWQ0SGFJdGJQVXRib2MybUJOa0hDSVFsT2dVQ09hSjJ4UllVa3kxMU1fQVBIeUxaRE9VQkV4TXBNdzdoOTZPWGxwMlljNHNuRnkwd2RSU2ZLUWI3X0JtaWlXdWxONDVVUXpERDBicVRoVV9RYUpGYmc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-38" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-38').style.display='none'">✕</button>
+                
+                <h2>Le Japon ouvre ses bourses d’études 2027-2028 aux étudiants marocains : conditions, modalités d’inscription et délais de candidature - Le Matin.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Le Japon ouvre ses bourses d’études 2027-2028 aux étudiants marocains : conditions, modalités d’inscription et délais de candidature &amp;nbsp;&amp;nbsp; Le Matin.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMV9qNWtwam42bWlYXzhYUUhjWHlPT2RnNnptbUhtZGViUDVROTREV1d1Zk80SUpodDhob0o0ZFlxUUVvRWlJNzE0ZjFqRVNHbGhsMktyRGppLWQ5eU1pT2pjeGFyZmZTdDk5bHlLTmljbmxJTGltTVNya3hrR1VobFV6VXp0Sm1OSzRkb3Uyc2h1d3lvV21RemtIRllJaTFCcVJscXNKRUE0bEnSAbABQVVfeXFMUFRNd2hTcEp3S1FETkVjeUJQZ1ZobGl6a1d6SENhT2UzMS1nWm5SOEFNamY2el93T3FXXzNka2I4NW4tXzE3MFFGeGwtRmZZMkc4S3FyenFqV09qbVpjU2dWbF9WMDRrMGdWcWRnLVNKYS1VeTU5bDZEZnNRdmZNTHNEZEZMcGVhNkpia0cxQWd4bkQ3QUN5WFo1TTNLMlRVbjJ2bWRXa1c4UkNyUVJSQUI?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-39" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-39').style.display='none'">✕</button>
+                
+                <h2>Bourses d’études nucléaires : l'excellence comme levier d’attractivité de la filière - info.gouv.fr</h2>
+                <p class="modal-meta">Source : Google News (bourse d'étude génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses d’études nucléaires : l'excellence comme levier d’attractivité de la filière &amp;nbsp;&amp;nbsp; info.gouv.fr</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOano3TEc0SXhiYk1IRDE0OU9ZZmF4OVRnUlVUOU81TWllQzlrQTVrTzNMZnZybGNHM1V0bGtHVXRRR3hSVUFoMThUb2pobk5EeUNYZEJIOGdkczNHZVBma0M0LUw0SlpkM2ZOcEhqaDI2Ukpyb0U5bHNvZExIbm00YllnMHBqc1gwREMxS1JsOE5WLU1UYzBpc1ROUWFXYWJHMjRqQXdOMElOYmgwa2Uyd19RdTU0OTVfQnQyZy1EVDR4M1Z5d2NnNg?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-40" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-40').style.display='none'">✕</button>
+                
+                <h2>Opportunité: l'UEMOA offre des bourses d’excellences 2023 - Gnatepe</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Opportunité: l'UEMOA offre des bourses d’excellences 2023 &amp;nbsp;&amp;nbsp; Gnatepe</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQSmhGdW9vYU9OVTJTdVNWbDhPUTJ3UHpLYm1LejVHNWdkM3UybW9RS090cWtPWlZ2SmNOUWFNVEJkMDA0dVBoMk1peDdvR2VkclowQnI4TVVTUERiNWZiTUVDd1pOYmRuY0RQem40OVlBT2trc21VbUNYdmRLd01CRg?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-41" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-41').style.display='none'">✕</button>
+                
+                <h2>Appel à candidatures pour les bourses d’excellence de l’UEMOA - Gnatepe</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Appel à candidatures pour les bourses d’excellence de l’UEMOA &amp;nbsp;&amp;nbsp; Gnatepe</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOZHExdEZuZE1uRklnajdQQnctcHZLVmNXOFlEN2gta1o2S1hMVzdMS0tuU0dlRnVyWXJqWUFFaUFmQTVrREo2bEdWVmtFbGgwdk5oNzAtaXlwQlpWY0xTN0xIcDRDbGNQMV9EUXBnMnV6Ukw3bWZqWkxwVFRkcVk5czJ3WXZJTnM?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-42" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-42').style.display='none'">✕</button>
+                
+                <h2>Bourse d'études à l'étranger : Voici la liste des étudiants sélectionnés par le gouvernement togolais - l-frii.com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse d'études à l'étranger : Voici la liste des étudiants sélectionnés par le gouvernement togolais &amp;nbsp;&amp;nbsp; l-frii.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQczYyZnVHRHI4UW9ySVNEa1JFeS0wdlNRLWJkc3NoT2N1ZjZ4QmJiS0dHSXBsT2xDWDNZNEh2WUgtYzM5QjRGQ1hZQ21WTE9CVm9mNS1OVFVIcE1PN3I4RkN6LWlraXBEZkZSWmFWMFVLdW9nUFhTWTUzc216MWRWN0xpSVdIdE55eVA2ZFhpUk91UGtqU2RaSF9FWWx0bTFYR19PazBVRDJKOVlrc1NlcFA0cE5LMFJ6?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-43" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-43').style.display='none'">✕</button>
+                
+                <h2>Bourses d’études au Japon : le Togo ouvre les candidatures pour 2026–2027 - Icilome</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses d’études au Japon : le Togo ouvre les candidatures pour 2026–2027 &amp;nbsp;&amp;nbsp; Icilome</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQbHdaSEpDYXo2UVdyS0JldW1vSzFrRkQ5ZG9tMGw1VEs1WWh2MWZVVW50c2ZueWx3bVh6RzhPY203bDltS3BJNEtuOVc4cXZCMzRCRUExamZ5X1ZWR0lVc1ZjWXZhOTltbVFLRmNEYlpKeUpoUkdadFNsVGpxZGxpdllBeDk3RTcxeXNtLWFDZU41X3dMZVdnQURmMGx6LTNj?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-44" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-44').style.display='none'">✕</button>
+                
+                <h2>Appel à candidatures spécial pour le programme de Master et Doctorat de l’Université Panafricaine (PAU) de l’UNION AFRICAINE 2025 - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Appel à candidatures spécial pour le programme de Master et Doctorat de l’Université Panafricaine (PAU) de l’UNION AFRICAINE 2025 &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxPcmlTV0pZYzFIUzRYTGxwZ0xaY3pYYUJqcmxpOTNfbEZXLUdJR21uSVgxX2ZHYXZPdVBrMXQzbFFyZWJSSDB4S2RJM1c5Q0hzQndad2d2ZXdpQzBHelNGRDRyQXE0NTdOSXYyTWRQSWY3bjNqd2hWUUtiRXY5S2J5MXJVZC1tQ0dTQkhpX2RmMURHckstODFEV3JEOWlsQzdESHQ2NHI1SUZoMnNMc2VDZW9VVmlwMXBWSkR0cnJ0Z3ZmOTNab0FSVUFNWVY1bnZOMzhFTHRsQXVtUFBjMTFiTGVEdUM5MWtVRlY3cGJQNzRYdw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-45" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-45').style.display='none'">✕</button>
+                
+                <h2>Opportunité d'études au Maroc : 50 bourses d'études supérieures disponibles pour les jeunes camerounais - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Opportunité d'études au Maroc : 50 bourses d'études supérieures disponibles pour les jeunes camerounais &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNYVpBLWxlYktjbHRDcXNsV2xmQkVhLU9adlRKaTNTMVRlYjV1RXE0ckhhX0pXWUFYb0ZQNWdNR0tqVVdldkZwMlFiaFZZeUh5dFJmSHFLTFYwd3pFTEhTdGIwZkl0TEdOcllvMVl1ZU4xZERURW5FeUJjcGlXTjZTQXcxeGlqZjlybzF5OVlkTHBuREx5Q05tSU9QYThyajFpcXJPM2FPVVBQVi1wMnJ3SFJMMHpvUFdydGZHR0V0N1hXc19CMlVHTTJqNA?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-46" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-46').style.display='none'">✕</button>
+                
+                <h2>Bourses d’études de l’École des sciences et de l’ingénierie de SLU 2024 - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses d’études de l’École des sciences et de l’ingénierie de SLU 2024 &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQVlcyZklWZ0RwRmJLREJPZUlfMEp1SFhPVzNUTmRDYkZtcWNKZGpaWHhLYURqcGNOMFItTDRVTzRfNTJtaXdIbFdrN1VMMm9QWVdJeGphNGNodTM5SVpKd3o0ZlhCbWYzRDU5d2tPX0stRkk3XzhGZW8tUnpMeFJ0dVlrNDNudHMzTWxvSGJnUDBGMzJyUzZacl9INTFTQjROR2c?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-47" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-47').style.display='none'">✕</button>
+                
+                <h2>OFFRE DE 100 BOURSES D’ETUDES : PROGRAMME DE BOURSES INTERNATIONALES INSTITUT 2iE – MASTERCARD FOUNDATION - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">OFFRE DE 100 BOURSES D’ETUDES : PROGRAMME DE BOURSES INTERNATIONALES INSTITUT 2iE – MASTERCARD FOUNDATION &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNZ0g1RDFLdGdqWUZsNEhuXzZPdkZlLXNqQzg4bl9BWlkwSkY0UUI0NkVjTkFnOFRlckkzR3JUMG1nZXNXSjZhdk1ibDZfcmt6RXpoVkpNSTVvSG5rYzNmY29qNVlaZU1rQ2dQTEN6ZUs3c2VKNlJpRXY4WXh3MTVZalJrSDFXWVU1clJmaF9ld2s2MzR3NWN2S0g4YWR4QTkwVWxvbVlQVTlwQlJaaDJoamZXYmVGZFhWcUxMVzNUQzhaRWpFRlFtTGtVYzk?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-48" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-48').style.display='none'">✕</button>
+                
+                <h2>POSTULEZ pour la Bourse Erasmus Mundus 2026 en énergies renouvelables et construction durable - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">POSTULEZ pour la Bourse Erasmus Mundus 2026 en énergies renouvelables et construction durable &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTUhLY0JFSll4YVZHb2xiRXlhRFBXUk1udXU2TlpuMDB3by1XWkdmVlZyTHh2cEJJYTlyZWZrdXU3OGV6bUZWN214Z3I5OGYtLWUwaTZ5Qzc2cERHbWVQcUdNOFoxZTdxSUdacnNUTHhxUWp1RERLMVg1ZFZsbUhsZGV3UE9Id18wN2xtRGREbzNCY3Jha29EbE43Ql9yNVNZcnZFWjl1YmtWLUM0b1Q1UHZ5X29wRWpKNHVXRXBoQ0lkT3c?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-49" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-49').style.display='none'">✕</button>
+                
+                <h2>Postulez maintenant à la Bourse Kipaji de l’Université de Twente, (2026-2027) - YOP L-FRII</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Postulez maintenant à la Bourse Kipaji de l’Université de Twente, (2026-2027) &amp;nbsp;&amp;nbsp; YOP L-FRII</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGs3MFBZaHRpQkN4SExqVGxieFVmSUFoSDN0UDdlY0QxTUVjc05UZTg5NVZMa2hDOEhCWkE3QmQxN2VfTTY3NnRmYU9ha1NCUWxzRWlKYlI4VEo5MnNVckYyLWtxNklhakRwYkJQTmdVY1h1RVVKWElEYmFJWm8wckxtbm5YQXRZTnhGRG1UaWJPRkNIcjRzVjdrM0J1TmJjZDdlZ3VSWDI?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-50" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-50').style.display='none'">✕</button>
+                
+                <h2>Embellie boursière annoncée pour Stroc Industrie - Le Matin.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Embellie boursière annoncée pour Stroc Industrie &amp;nbsp;&amp;nbsp; Le Matin.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOTkdKZkJQc1JIVjVpRFNiNzRmOERtV0hlTkxmWVpVeDVRdTRSMkIwQUpXcEt2WUdyVXZmSWtBSGp4dUp0cTljSzloX01BbmZkSXI3dUltOFp5YlluUkRmYUpTVXNMZWhVbkFYZ3BpY0picjg3ZjE3amhLYlN6TjRRQ1dFWV81X1pJX29yWGVybXJKSUQtb3JqTGRweEpqMmVhWTRhUmNZXy1mLW50WHfSAawBQVVfeXFMT29MNlhLNHNxV2pleExKODM1a1g0Z0k3d1FaYlJ3TE4yV0NiSUZFOVA1R1hXMnpicXEtTnBIaW43M0M3c3dJcVBHYXlXek9TWmN1cTJKTER0eFU4YXZjWW8tQU9iSlVHdEV0aUQ3SjBHZE9QMmM5TFZFSExCOVFNQnAwMGJwa25XY1NMVlhKak1nSnhtdzAzcDNMTllmZXNlekZ3WDVnOWplX240YQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-51" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-51').style.display='none'">✕</button>
+                
+                <h2>Haïti - Éducation : Les 104 bénéficiaires de bourse pour le Mexique bientôt connus - HaitiLibre.com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Haïti - Éducation : Les 104 bénéficiaires de bourse pour le Mexique bientôt connus &amp;nbsp;&amp;nbsp; HaitiLibre.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQXB5bmd2d2h3cEJXNU9ULVgwbWkwQWdoZzRpdTU1d096eDZkMGlncUJIa1RzeGY4S2xDSkVkbkZISnlxY0xOU2ZUUHF4cXFyNXBBamU0WlNLQ1V4T0dwRk9VWEtQMHZwZVY1V1Itd3d2UTlNUFpBTE1BdDh4MHltdGQtblJlT204OGRPTGo5bFYxMnFZTmhTV19IY2RXYVhYREZyRzdSMUtBeEpXQlM5enkwcVJqc2dTQk85LTF5Vk9Bdw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-52" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-52').style.display='none'">✕</button>
+                
+                <h2>Burkina Faso : Une association aide des jeunes à obtenir des bourses d’études et des parrainages - Burkina24.com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Burkina Faso : Une association aide des jeunes à obtenir des bourses d’études et des parrainages &amp;nbsp;&amp;nbsp; Burkina24.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQbWhoQVJ1X05lSEtqMWd4NkRLQ25HSjVKdnlybDFaTW1DRzcyQmJ1VVowdnkyRF9BUmI4R3Bhc3J3bEhsT0FIOW1ySVVaV3pqSS1jVjNMNXVWZlRhMWlRRFlTNGFZMkM3UzRiMTFuU0dHd1RzcUVPMUhOcXZuVV9IUUwwWnhDT2hSNmpPQ0k2cFp6NU84LXloczExQjRVMGJVd20wTHpTOXY0UktGZVR2SWQ0TkxhUmtEZ0RnbERqcWZSdVBhVGc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-53" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-53').style.display='none'">✕</button>
+                
+                <h2>En 8 ans, la Bourse de sous-traitance et de partenariat du Cameroun a généré 242 contrats estimés à 41 milliards FCFA - Investir au Cameroun</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">En 8 ans, la Bourse de sous-traitance et de partenariat du Cameroun a généré 242 contrats estimés à 41 milliards FCFA &amp;nbsp;&amp;nbsp; Investir au Cameroun</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMihAJBVV95cUxPYmo2cnBfLXNoazNUbFJwOVRGZFctc0l3bzMzenAtdVBfdHYtR2UxTmJyOENFcG5vRHJlLXlTNWNuc1BpaDlIdjdlNU85ZERENnItNmEwbWQ0QmdZZVhNY0YwQ2N5dFBqWjVvNUwyUzNFby1KVnJmLV9iUjZ2aTlrR2c3YXFRQ29PMUpyRDBwS24wcjc3eUc5RHJ3cGpfLS1GTHlEWGpVOHVSejRWY0JyelNIY01RUzNfX0dweEs4OGF3ZGpqYjctWHVQdHEwVGRWTjF5OVh0LV9JYzJqTWMtOUdoLVJCdlpRZDNtU0R6WjdjTWNFSDdxMnpQaU9jeVhtcnZNZQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-54" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-54').style.display='none'">✕</button>
+                
+                <h2>La Fondation du Cégep récompense des étudiants d’exception - EnBeauce.Com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">La Fondation du Cégep récompense des étudiants d’exception &amp;nbsp;&amp;nbsp; EnBeauce.Com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVkFVSjI0WmgxLTd2RmhXOGctSzZpRng4azVobDZqYWYxbXJkb0w1VUZJcHBONjlRalhxNnFhM09ETU1JVHdTYVNmaVJQX0hicWhpS2JwSkN1LWtwUWVOc2Z0TXlfUHJBYXNoVHZoR2ctRUNpV2w4YlNETGNiZ1U2ZGxHUThhZndRZzB2b3dwYXpBMjJ0enM5cS1zaTRjeTB4dUpnbThjQW9GVFk?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-55" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-55').style.display='none'">✕</button>
+                
+                <h2>Jérôme Maheux décroche une bourse de Genivar - EnBeauce.Com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Jérôme Maheux décroche une bourse de Genivar &amp;nbsp;&amp;nbsp; EnBeauce.Com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQT2wwc0Z1Z3JwemQ2RVFpVGcwX24xQmp4YXhnNlZORktPbVh1SXJqZF9SRnJseEZrLU4ybmdZbG1GX2JySG9URXlUUWJkNTl0Z3JlTlRpTHZuallpaEpMVXVYdE5LWkxFeXZidGVhRTVpbk1RZ201S1hneDF1ZElKQnJSR1N2NlRGMnhhWkYyTXZscmZRd0N3eE45NA?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-56" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-56').style.display='none'">✕</button>
+                
+                <h2>Le Cégep Beauce-Appalaches diplôme 692 finissants - L’Éclaireur Progrès</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Le Cégep Beauce-Appalaches diplôme 692 finissants &amp;nbsp;&amp;nbsp; L’Éclaireur Progrès</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNZVRyM1FTN2piQ1VZRWJ2dUxJdmpIOW1sUHd6eEFlT09pYmp2bFp6Mk5Bdl80V0VnelE0MWVxQUtINTJ2VmtGemFDbExhZXJsZ1V6dUc3eXAyazc2dHF2dTNaNFRuT2tJY29fYVdwc2VJSnBGaUdVNEJSa0FsNmpON3Z5M2RxMWExa0x0bUttQ0t1WVRpRGZnaml3?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-57" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-57').style.display='none'">✕</button>
+                
+                <h2>Setrag offre 20 bourses d’études aux bacheliers gabonais - Gabonreview.com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Setrag offre 20 bourses d’études aux bacheliers gabonais &amp;nbsp;&amp;nbsp; Gabonreview.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQaklLbTkxaFFPX2dnVFpQTDVRNkhVRGdTREhPSWpiZGh3bGhFbXpZaDNhbi1FYWwtLXZ4dmE5RzNWTTk1NEx5WHhXU1A2X2xjazdCYkd4c2ZVWEpQUUxPM29jTFlPUEhDclljblRUdjB3WDMxVEJyMC1sTlBENHBtY0kzLTRINDNTc3ZmWg?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-58" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-58').style.display='none'">✕</button>
+                
+                <h2>Bourse: Mediterrania Capital Partners officialise sa sortie totale de TGCC que le fonds qualifie de nouvelle &quot;licorne&quot; africaine&quot; - Boursenews.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse: Mediterrania Capital Partners officialise sa sortie totale de TGCC que le fonds qualifie de nouvelle &quot;licorne&quot; africaine&quot; &amp;nbsp;&amp;nbsp; Boursenews.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOS0VVbUJmVmdCaXBSemZ0V1FWN1NyYTh0TXBOOWFGZnZlLVJCZ3lfaC05ZVNmbWd6dzFKY2hqQmZtX0k3bHI0b1dIWkdsbWkyN0tUWHF4VFZ4Vmd1ODgtUm1VVlpJdnoyM2dFZ2VWeVJwQnNlb3lGZUtCNW1zdzVzQW1OTU5Wam8xd3lNS0RsUF9XQ0R1LTNDYllYSFhiVVk?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-59" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-59').style.display='none'">✕</button>
+                
+                <h2>Enseignement supérieur : voici les critères qu’il faut pour faire certaines filières à l’université - Guinéenews</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Enseignement supérieur : voici les critères qu’il faut pour faire certaines filières à l’université &amp;nbsp;&amp;nbsp; Guinéenews</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOTVRRd18tWTF5ZUVKZU91RVlHUzBkU2dSbWY5WF9UMEdXcVJvVTI1X3daTkE3cFJiX3pIX29TQjlXalcyWDRnLWxyX0paOUtQLUxPdkVwUkZ0dFZfcnZkcHgxMGw5dXNiR0x1anhMRVNaZ0pPc2UtR2Y1VU1xR2l6Skl3V2VaWUY2dkFRS1BJX3BvVm9iZTREbXJXQjdlY2VLX1REaWVRMlBfQXlvSDFZZnJDNW1tclRYbF9BekJDR2RXbnhNUHU0eTZ30gHKAUFVX3lxTE5NVFF3Xy1ZMXllRUplT3VFWUdTMGRTZ1JtZjlYX1QwR1dxUm9VMjVfd1pOQTdwUmJfekhfb1NCOVdqVzJYNGctbHJfSlo5S1AtTE92RXBSRnR0Vl9ydmRweDEwbDl1c2JHTHVqeExFU1pnSk9zZS1HZjVVTXFHaXpKSXdXZVpZRjZ2QVFLUElfcG9Wb2JlNERtcldCN2VjZUtfVERpZVEyUF9BeW9IMVlmckM1bW1yVFhsX0F6QkNHZFdueE1QdTR5Nnc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-60" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-60').style.display='none'">✕</button>
+                
+                <h2>Ciments du Maroc décroche en Bourse, les analystes y voient une opportunité - Medias24</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Ciments du Maroc décroche en Bourse, les analystes y voient une opportunité &amp;nbsp;&amp;nbsp; Medias24</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPSXpsc05IT1VxeGRzbGlOUlBzNDlrY2tYX3lwYmZKRTBGeXFIT2diVmN3a3FGdU1Nb05SOWlBSHdpek92S3hqQW9zR0dJRmQwZVA0X1ZIbkVGMTJWRlBqY0l4a0stVmxIVENBVEdiZHVyUVJQOHBySUlGTW05LTBpdzVZTmdRLUVRdUh4RzZIbGEwWlJ5TklOVy1CVEVuSTNWTFAxaFdQWUpPT0E3RDJUTVBJdlJqdw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-61" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-61').style.display='none'">✕</button>
+                
+                <h2>Deux étudiants en génie civil du Cégep Beauce-Appalaches décrochent des bourses - EnBeauce.Com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Deux étudiants en génie civil du Cégep Beauce-Appalaches décrochent des bourses &amp;nbsp;&amp;nbsp; EnBeauce.Com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSWxTYWJoSFRXZDMyOEtYQU9mYlFkNHFfV2E4cEkyUVkxbkVMY1NfMWJ1U1pIZHV3NXRoU3ZyWEJMUnJuZ0Fia3hhYzMzUDExY1F5Ul9qeDNxaElrLWhZWmNld195ZEl5Z3pEeHYyd0Z2Ql93b1NKdGxGYkNLMG9ocUthWmo0ZFlVenpvQkJPQm5XblRDVWhfdFdZQW9yQ1B0dEJsMElaVmJ4enQtY3QxMWswNGh6UTYwY1J0MVlCVC1sYmozQXdsbQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-62" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-62').style.display='none'">✕</button>
+                
+                <h2>Bourses Perspective Québec | Tuition &amp; Financial Aid - Concordia University</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses Perspective Québec | Tuition &amp; Financial Aid &amp;nbsp;&amp;nbsp; Concordia University</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNRnVBZXdndVh5WWVIYzFyM2VkaDdrcFphOWZIODNFai1uc1RKcG1uZHhiaTdDN1VqMHIxeTllRDlEckZSR0R6cW1KWW1sVnRpTEZ3V3NsWHRZaXF4U2xqcFFncW1UZjN0eExNblFIQnhocml3M01WdFRRa3V6TFNxeGY4aDZoTWpyZTlPNUtsZnRuREk?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-63" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-63').style.display='none'">✕</button>
+                
+                <h2>Bourse de Casablanca : la croissance s’installe, l’investissement repart - LesEco.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse de Casablanca : la croissance s’installe, l’investissement repart &amp;nbsp;&amp;nbsp; LesEco.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQTFJJODh6elRZRTNMX044dHNZSkZQUTdOWUJpMk9Qajc0QkVLMlktblVSNEdfcEg3R3VoY2hYUkxfYWE0U0d6b1lQSjBhR0FJbGRqdWZyNVZTMWdyN0JIODRBWHRjMkFJNS1yNGpwamhSTTJpaERrcjJDNlpwNV9Vcy1zOFBveDJ1b1p2MzZnYnFZQjUzWmVMQUEyeUdtbHI5?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-64" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-64').style.display='none'">✕</button>
+                
+                <h2>30 bourses d’études et 2 bourses de formation d’ingénieur offertes par l'Algérie aux étudiants Camerounais - Actu Cameroun</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">30 bourses d’études et 2 bourses de formation d’ingénieur offertes par l'Algérie aux étudiants Camerounais &amp;nbsp;&amp;nbsp; Actu Cameroun</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQbzhIckJYZVUyM21TNk9RbE9veEVYRkR3TUpEWm54cTkyMEk4ZHVUVTVhY1RtaTIzT3lTT2xPZjVjWE03ZlY1WEZTWl9nOWQwMlJlaFZlME80SUF4dlFxNjZVU1Z2Ym4xZ2dXQ1ltNTZiTHpDeFR3MldFV0pCM2ZJR1pQODJlQmhVVzZPREM4YUlIdUdNMEJ2OGdZNjVXRzVHa0t6Q0tkY1BxNHdQRmlPcFQ1QlE1X1Z5M2JhNklYTjlHdndSdURWd2V0bUxoR0hVSU5ERDRTaw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-65" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-65').style.display='none'">✕</button>
+                
+                <h2>Introduction en Bourse, acquisition de STAM-VIAS, 17.000 salariés: TGCC construit en grand - Le360</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Introduction en Bourse, acquisition de STAM-VIAS, 17.000 salariés: TGCC construit en grand &amp;nbsp;&amp;nbsp; Le360</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxQcnpzalh5MVVRNFQ0aG95N25rSkZKTHl1S2FWM2dKanFYUGxHbUl6QWxRM284OTlpVk9idUVBRjl4ZVgtOUwwcWk2MGZ2M2JMVXpWR0pPcmtCY1kzWWtqSjFLMTF5TUQxcjItcGZMeEk5T1F1VlBJZnNady1kRWxkUFhXM0dQcDhaSGRJNXpTRVZ3YjFQN3RFV1hWYXE1RTVHWXc4SlZsMlRWQlFIVTNOZHZHSXplaUw3M1FYNjNkbTEyVDNHQmxiZGZCME9GcjZPTmF5ZnRYV2NsYjA?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-66" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-66').style.display='none'">✕</button>
+                
+                <h2>Bourse : AGR recommande de souscrire à l’IPO du groupe SGTM - La Vie éco</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse : AGR recommande de souscrire à l’IPO du groupe SGTM &amp;nbsp;&amp;nbsp; La Vie éco</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOR2V2c2QyN0FZUkRzWHc2SGRkLXEyc3M5QUhQdldUcE1ocXJHcW9Ia2FucnQzclNJd1JJZFJHcVJpWGlGVzRhS0NvOE1DWUZ4czNCeW5OVUVRc2xGRUt4N1lxejZaSU02VHhvTGcyMnBWZ3dVVS1pWDZQUnRNcWFjZE1uQmJMS1lfbXVvMHYxcF9vdXc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-67" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-67').style.display='none'">✕</button>
+                
+                <h2>Pomerleau propulse la relève en génie à l’UdeS - Université de Sherbrooke</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Pomerleau propulse la relève en génie à l’UdeS &amp;nbsp;&amp;nbsp; Université de Sherbrooke</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNT1VocGt5S1FjUkF1cEpBZy1jZ1JTVThTNWc2RTlxMTJTUEM1Mk51anFiRngwekl5TEY5eW9vTV95YnBXT05ubWRUQm5zS3FnN29xMlVuMWVXQW5TV3p5YTRGbHQ1elU3WGdDdHZYTVJBdUxaLXAwYTUyVV9BamFRWGpEWQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-68" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-68').style.display='none'">✕</button>
+                
+                <h2>13e édition de la Cérémonie de remise de bourses: l’excellence soulignée autrement - fsg.ulaval.ca</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">13e édition de la Cérémonie de remise de bourses: l’excellence soulignée autrement &amp;nbsp;&amp;nbsp; fsg.ulaval.ca</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiygFBVV95cUxPb082dmtqWGdVS0tSaWdqWlpNejd2QWtuVG1NNnNzVXpMVDBWbGRKYURhT2sxaHllM3ZaLTlpUnFSNWFGNFVfYTEyZTk3ZG1nUjJlYTVPXzFXNUFzYldEUXI1UDhvSzQycERrZHd5RGpyN3lyenZMMk52WkdJNnJHNzBnUlVoNFctMnlzRm1mNVp3a2tvSk9YbGFHUG5zQTVNeHAzZVkyVGhEWkc0TzRXSVdSY0IwVDA0cnMyV3p1aEIzSjZOXy1RQk9B?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-69" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-69').style.display='none'">✕</button>
+                
+                <h2>Actions dans le nucléaire | Top 10 et comment investir - ig.com</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Actions dans le nucléaire | Top 10 et comment investir &amp;nbsp;&amp;nbsp; ig.com</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNMHdveEdLQ21MSHBkQTBfakR1RWZsWVJVWjdtWnY4T29xTTc4aW16OHcxdTlZRVZQRXN3REdMQmpZVHNEdFRaaENlR0pDRmtwSUxlYVVtamdWbEJERU80cWVNTmxPc3FwZWRtd2V4TGtMOERtZkFvUU81ZnY5OEpSN1MzUXRsckpiV1RZaVRZNjZfYlUzMVZHcEh0V1Zydw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-70" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-70').style.display='none'">✕</button>
+                
+                <h2>Une bourse, un nom, une rencontre, un avenir - Université de Sherbrooke</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Une bourse, un nom, une rencontre, un avenir &amp;nbsp;&amp;nbsp; Université de Sherbrooke</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBZQTROZ2pwQUNWUmpVYUtRbDgydWNBTmxINFFzUEgwN3FSOXpCVzJYQzBnbmhsdHdlaWJ1eFlsdFdRZWdHbzNqcUlLRXRYOUk1dGo4QkJNN1dFa1U4WmpCZXRIU2NkcG1fcF94dzJSOHhTTWZI?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-71" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-71').style.display='none'">✕</button>
+                
+                <h2>À qui appartiennent 20 des plus grandes entreprises de construction au monde ? - Construction Briefing</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">À qui appartiennent 20 des plus grandes entreprises de construction au monde ? &amp;nbsp;&amp;nbsp; Construction Briefing</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxONzd6cEhiRUdxNDZDaGVyc1gwUHRvWHZpZTNFMi1vNXJpMjd5UnhadjZCc1lwVmZuMC0zMzAzZTc5VTBnVlR6UGFkdnU0UjMyN2JRR2lSSG5COGg4UDBDMWFiUGNFRGx4SktIV0stelhzTzdNUjFkOU9penZCVDRFd2lBQVAwWVJ1TUFUYlYyQ0hwZ1ktRm5GdHlXT2tLUDgxSDItaFhxb0pSSlBTNnFGYmJrU3JSZVpRVGlMRFkwWkQ5dlo0VzdLNEdrWHUzcXhndWlr?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-72" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-72').style.display='none'">✕</button>
+                
+                <h2>Action Vinci : comment investir ? - Cafédelabourse</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Action Vinci : comment investir ? &amp;nbsp;&amp;nbsp; Cafédelabourse</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE5zYktnd0Y4NWhsXzh0ZVFqWllaWWRUelBEUlNQZk5LYXpTWWxId3E3Slc1M1RkdTZ4ZVB4ZHpRNGEtQWJnajkyOUhIOTRGblF2WHAwTGhEcjJVYUlsTTJ4cldCY2FUUDE5MkpVZHNHdlQ1X2s?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-73" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-73').style.display='none'">✕</button>
+                
+                <h2>Polytechnique étend son programme de bourses de la rose blanche à 14 femmes - Noovo Info</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Polytechnique étend son programme de bourses de la rose blanche à 14 femmes &amp;nbsp;&amp;nbsp; Noovo Info</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPSjJVRV81MWR0MU9XbEtZSFRFT0VGZkM3REd1aG5pTEVxanphX1BldjFmdWhkd1dkTnVpM2ZWRnlxbjlhaFdlOUY1N3NCNHNIR1dyVkFQUVBkYmhBcldQenpqTTNEcEppN0hKbGN2SkVYaHdHaFM1VUlQTTI4NXFicEtEOHQ0YWZjbDJncXc1V2tZcnpUVFdvbjVhWG5EUDYxUU5NOF8zVXhQMF9scnNTSm5B?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-74" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-74').style.display='none'">✕</button>
+                
+                <h2>Nouveau sommet en Bourse pour WSP Global - La Presse</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Nouveau sommet en Bourse pour WSP Global &amp;nbsp;&amp;nbsp; La Presse</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPSlloQTdBQkh4QzgtTU9aU1VSYVFwcDV5ZUJ1RnBrTDVqMXFHeW55elJDcU51QVhmU1RvV3FYcEpZdGU0WmNFdXdIN3hyZmxiZU4zcmt5NGFWNTNEUTF5WXRoNGxrMzB2c2ttc0hBRzI2U1kwQkJvU0EzMm9xdnd0Q09LdTB5LWtkQ2M2Q0VUdXNiR0tBaDVwejEwaUFQV1dZU2c?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-75" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-75').style.display='none'">✕</button>
+                
+                <h2>Les valeurs à suivre à la Bourse de Paris - Vendredi 24 novembre 2023 - Option Finance</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Les valeurs à suivre à la Bourse de Paris - Vendredi 24 novembre 2023 &amp;nbsp;&amp;nbsp; Option Finance</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxQTlEta3Nvak1HZXMwVkJnb1pTNE9jSHczeXFuWHlYakhaNWdKREd6aVhpOU1rY29zUlV6YUFUNmdhMkdsUTRjcG1Qbkp1dHdzSzJKRGF0YzB1clBBZVhvbnFpdWV1R21sSlJ5NmlUR3d5MDdkVy1ERndpTVJwVmxYZjNZU2UtcHlZQ2NCWGp1SERMSEsxc2NnN0xiOEE4NWxVRERTcEFJQ2hkQTJfTWxGMGkxbkxUclMwX2FPaHRCcTRGS2tKamR3U2hHeC1BaEtXNE9xR3NrbUI?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-76" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-76').style.display='none'">✕</button>
+                
+                <h2>Alstom, Arcelormittal, Saint-Gobain : Ces groupes portés en Bourse par le &quot;quoi qu'il en coûte&quot; allemand - BFM Bourse</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Alstom, Arcelormittal, Saint-Gobain : Ces groupes portés en Bourse par le &quot;quoi qu'il en coûte&quot; allemand &amp;nbsp;&amp;nbsp; BFM Bourse</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi_AFBVV95cUxQek5ya01xeXVvNWVBVjg2OW5BREswRV9xcWZJb2dabzdWODNGajhQOWRoTm1vUzAxSDhIeWRDODl2YjU2cmd6YklWUWtucFhraWNhUHcwd1NpYkJpRjZFcHhTZU8zRTk2bXBfam9VVm5oWkZuamV6cGQyM1dWdHo4WWx4M2ZNUVpidWxkUEppNWZXa0YweVZkcGwyYTNVWmJUVGdONngwMnBoUVd4ZnpvQUJrODRhRktoZWxhbWFzTkRwMzROWFVqWmVpbDNXWVN0eHpsQ01IN29QTk85UGZPUjZrbWQ2aHV5US1tUFBVaWlVMlc0aHhqc25wLVA?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-77" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-77').style.display='none'">✕</button>
+                
+                <h2>L'UO bat son record de lauréats Eiffel ! - Université d'Orléans</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">L'UO bat son record de lauréats Eiffel ! &amp;nbsp;&amp;nbsp; Université d'Orléans</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQYWhaUTNUdU9yWGtzbkVYWmtFeXYwcHlJSmZudkotLUE4c0ItOUViY0lyLWtnSHhKa1ZaQUdocUpNbWhZM2w2R0xKV3JaNndpelQ5aTB4SjZNakJXS0lJZDV6dG5mYzZYZ3JSSi1yR2U5bjU2ZkprR2c2dk1Ybi12RjQzejg1LW01R3c?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-78" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-78').style.display='none'">✕</button>
+                
+                <h2>Athlétisme. « Ça m’a fait grandir », Matthys Bourse veut bonifier son expérience américaine - Ouest-France</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Athlétisme. « Ça m’a fait grandir », Matthys Bourse veut bonifier son expérience américaine &amp;nbsp;&amp;nbsp; Ouest-France</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxQMHNoLXdsSExjbmRqend0eUpVUGgzS2F2SnRqZFRqVlBZOVNmM1pEb2I0TTQ2b2V6MVljVE1maTIyQ19fbk5jV29lVm5pTk94ejdmQ0oxdTliaHV0eVpXTGZscm9XRDFSdG9DcXdIMnduWmF2UHExdExtSGo4ejY2RFdIZHk4aFhyaXhjcl9MM3dscGRwdldiOXZnX1d1MGEwWFl2TWhPTjNHTlFVUVgySjNoampvbVMxdDRPcXFTMnFQWnNKNVVhbzlmYzExUFJKOFZISU80RWEzNjB3ZmczVl85OTFIWjFNUnVzYVBYR1ctSlJhRWFGRTRB?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-79" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-79').style.display='none'">✕</button>
+                
+                <h2>Des étudiants en BTP et en Génie civil accèdent à une bourse - Moov.Mg</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Des étudiants en BTP et en Génie civil accèdent à une bourse &amp;nbsp;&amp;nbsp; Moov.Mg</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNWUJ1ZldMem5pVEpZcjFXcXI5bHJkNU9FMXhXaVhWQlBJTW5qNEhSbFVMLWZRWm1RQ0EzbEFHZlVHV183bGY2Nmw1YnBwd05mbmtvYTJKVHZOa2t5eUMzTkt4cVpTXzJVQ3dFZElrZmpLcHREOWFBSFY4R3B4TUxmTzdGYVMydWt3NXJ5eGNzMTRodUtZcEFmNHUyV2NFTTdhdk1rZHNrMA?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-80" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-80').style.display='none'">✕</button>
+                
+                <h2>La Bourse de Paris attendue en petite baisse à l'ouverture - TradingView</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">La Bourse de Paris attendue en petite baisse à l'ouverture &amp;nbsp;&amp;nbsp; TradingView</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE54YTU4NEFnelZIcUNXSmY3Sk5SeWlab0ZiOUNUbXUyWjY3eUpJWjlSdEVkblhpaEtnS3JJNlhkLV95WkxTeW5tRzVGeFFMaWZGZE1LaDVMRDFQS2R1WmFpS3l3?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-81" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-81').style.display='none'">✕</button>
+                
+                <h2>Bourse : ces valeurs du BTP à faire figurer sur votre liste d'achats 2016 - L'Express</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourse : ces valeurs du BTP à faire figurer sur votre liste d'achats 2016 &amp;nbsp;&amp;nbsp; L'Express</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPNWFfSVlxQ0JpLUtjejI3VDhaWmhmX2FnaHJ2dnBidlp4S0YzMXBDVWp0bjhQd0ROMjQwemZPUjl4NlhVb1RvNEwzVEJ5NXRZUjZBUlRnaUZpV1NuX0ljNVZfdUtiS0N2QnVpeXNWV0ZJV2NTM1ZlX2dHaFp6UUNKU3NSd1NKQzlUbW54a2tQbjJvaVl1b19SVXVOYkJ1VlNUaGZkdUZkU2U3NWtGNjJocDNYb2FmWV9HSWxSTU1VS1duY2cy?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-82" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-82').style.display='none'">✕</button>
+                
+                <h2>Nucléaire : EDF pourrait confier 10 Mds€ de génie civil de l'EPR2 à un groupement de cinq entreprises BTP, dont Vinci, Eiffage et Bouygues - Idéal Investisseur</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Nucléaire : EDF pourrait confier 10 Mds€ de génie civil de l'EPR2 à un groupement de cinq entreprises BTP, dont Vinci, Eiffage et Bouygues &amp;nbsp;&amp;nbsp; Idéal Investisseur</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMilgJBVV95cUxNeUY2UDM2cUN3MloxOHNxbFZXS3hVSXRfOU82aFozTDR0dmV1ZnplZ000VG9jM3QwTEp3OWxEamYyc0IyTUxLaldjeUZyQTRqQzBZa1dENS00SWxNZTRMMGlIMGNwckZEV3lBdmNxaHF2MXkzdmJ0TUJ3M1FKdDhFYUU3STY4ZWNqY2lrNU9ZYl92VTBWc0hid0c5NTM0eWZHM05sV05DX2czbi1ERXR1TDZmQ1hpeEM3b1NsOHp3ZEtqOXJlanZfVzFZWXNQbWRYUHBaSEdjLTJVaWtaX1JHaWV2VzJSSmh3dmZNWHh2eEtKb0xrSlh4ZFlicXI5ODNiUzJoRExLQlpKdzQxYTRYMW43c0c4UQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-83" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-83').style.display='none'">✕</button>
+                
+                <h2>Une immersion scientifique francophone au cœur du programme Bourse de recherche Globalink pour la recherche et le développement en français - Agence Universitaire de la Francophonie</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Une immersion scientifique francophone au cœur du programme Bourse de recherche Globalink pour la recherche et le développement en français &amp;nbsp;&amp;nbsp; Agence Universitaire de la Francophonie</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOV0pyZlJBWXdveVdheWtIYVM5bEVydHR6aEpIZUF3SGVIVzBkazROS2RPY2F1ellqZHVGRGRqUWtzbGlCcmJwVUZfY0s1WklkWEJDbDdsbU9vZ25oMmd2NFZiOGJnNTdlWXotV1RyN1c4cHROTUlVU0UxMEUxMThUUmFNc0pMVmd1TFBMTUVIT0FyR0h2Ymc?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-84" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-84').style.display='none'">✕</button>
+                
+                <h2>Projets dans le domaine du béton : trois personnes étudiantes obtiennent des bourses - fsg.ulaval.ca</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Projets dans le domaine du béton : trois personnes étudiantes obtiennent des bourses &amp;nbsp;&amp;nbsp; fsg.ulaval.ca</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNQzJNTnl6RzY4RnVtb0RLbkhSZGRZM1h4R2xDRFh3QnRzejV5RV9lRGMwNHJZanp3allSSjRQYk1rQnF3dVJNeG9MdGhTdVE4Um90a0FkZ1ZFZmRVZl9Id3U3SDNCSFN2S0xLLXJOY0hUYTdTck5yVjlmM29CTGtrNWx0Z1FJOHhIZVBWXzJWNHhlZ2ZjWlgtUFlyRk54OUJCREtEMTdTZ19GZTJMY3RjeklnNnFxSFRwVzdSNjRPb1NkM1RlYW9mTHEwUnQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-85" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-85').style.display='none'">✕</button>
+                
+                <h2>Un ancien étudiant crée une bourse ad vitam - Département de génie civil et de génie du bâtiment - Université de Sherbrooke</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Un ancien étudiant crée une bourse ad vitam - Département de génie civil et de génie du bâtiment &amp;nbsp;&amp;nbsp; Université de Sherbrooke</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE1HRjQzSXEzZU5Mc2NoWUpJdmFaYUlJWGVNV0hMcFFVUW9TZFFYYUQtSmM2ckw1M1JjMHhqdDYyaW40b0ZXUVhnYmZndlZuWmFxX3pIRHo2cV9JRkNhUEdUS2xiNXhxR0l4VnZGbnVjcVc2N1FaRThN?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-86" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-86').style.display='none'">✕</button>
+                
+                <h2>Vinci : Pourquoi les groupes de construction ont le vent en poupe en Bourse cette année? - BFM Bourse</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Vinci : Pourquoi les groupes de construction ont le vent en poupe en Bourse cette année? &amp;nbsp;&amp;nbsp; BFM Bourse</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxQT1NzWjNYd2hYQ1AwTHV2OWlLVllVS3ZjMnpwckRQMldaMEFnbklCbW5Jb3EtaGNyX2ZDajBZc1RwajVpQWpoZGNaTGRFTHhZUE4tVUVaRjVjNkFuMWR2N2t6Q280OHFydGxUc0ZxSjZ0S01PTFN1a1hFUlVuUDI2SEpxQl94NzJRdWxDM3Z1UkJMZXVTV29EYnRWZGtjZ210czgxNzJrc1hCWWtTRUVyYWRjYnNabWpyODZBR1ViWU5KNHNDeEd4Q0Z5ZjdxSzQ0QlNjYmgwdDExYTQ0OVhHcFdNZVBSVXRrVjhV?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-87" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-87').style.display='none'">✕</button>
+                
+                <h2>L’Université d’Orléans brille à nouveau avec 8 lauréats de la prestigieuse bourse France Excellence Eiffel - Université d'Orléans</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">L’Université d’Orléans brille à nouveau avec 8 lauréats de la prestigieuse bourse France Excellence Eiffel &amp;nbsp;&amp;nbsp; Université d'Orléans</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOE1YY3pHUFZQUGNlSEt1MkJ6bDN4dWMzcnh0V0d6Z0ljcnJROHRCSm5IbUhPRzlsMmdVUUF4OXBxelZjbXNkWDlLTllWWHlqemllOGlsUXVtNkx1cG5sRjJSS3poQU1mU0kzMnduVzZUcmRhTkhZSnlXd3loVXYzVWFINnZLTm9ZdnVYVWExNkhhSHpVa0w1MkNuazBQNUFoRG9kVDJuRVpwQXpPQnZmbWl1UGZacUhobGNFb2hUOUxPdW5EamkxWg?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-88" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-88').style.display='none'">✕</button>
+                
+                <h2>Génie civil : Le Japon renouvelle son appui aux étudiants malgaches - Midi Madagasikara</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Génie civil : Le Japon renouvelle son appui aux étudiants malgaches &amp;nbsp;&amp;nbsp; Midi Madagasikara</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNOWZlN2tycFRSdjhUNVhyTGlIWTJ5ZzZUV3J1WU1GZjJydVljeWlkOUhZSVkyZnpQQ1hVYjhTX2laMElaSFdOOEJ4UDhDWVIzdXJyR2cxcTV3czJhVlM5WjUxdU83Qk9Pc3hQcXBPRlM5ak5YQWdGN1NvYTY4VlRPR0VoaTZYYUZpYnRZVEFKQkdMRnhJQXoySERodw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-89" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-89').style.display='none'">✕</button>
+                
+                <h2>Construction : Les patrons anticipent une hausse de l’activité au T2-2026 - Boursenews.ma</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Construction : Les patrons anticipent une hausse de l’activité au T2-2026 &amp;nbsp;&amp;nbsp; Boursenews.ma</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOc2tlYmR6OTdpMEhPNjhEVVBCOEJLQWtDVlRuSWNSTFlSZXJzdDhydVYxVTZKbjNPVlVBbW5iN1ZIUnpEelZVU3c1N25HdkR0NEQ0d1VnZ3BwYm1JaWJaeDZNUy1wamFsNVNvQ0R2NklhUkc3aV9tbjdWTkNFbEppMmxSRlRrZw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-90" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-90').style.display='none'">✕</button>
+                
+                <h2>SGTM prépare son entrée en Bourse pour honorer un carnet de commandes record - Hespress Français - Actualités du Maroc</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">SGTM prépare son entrée en Bourse pour honorer un carnet de commandes record &amp;nbsp;&amp;nbsp; Hespress Français - Actualités du Maroc</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPRjN5SWpxTlU3d0FfeWNlcGZwMDMtX2R4dk52ODNQX3ByWWp1M0NiOWJkM1pSZk5HbDE0cnN4c2FUcW1GUzl4Zk80Q3FYcWg2emxSLWxuNlcwTXJTY3l3Ym5JcjJNcElkWndCZVVmSHZRcm9ydkFXSWF0b1JYeUVUMWd4OHZZUzR2TlZGQ0NkTHcycFdIRHZtd1dnVDNsRWtzMmtxTnU2NlU1UlR3cFBYc0RB?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-91" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-91').style.display='none'">✕</button>
+                
+                <h2>Deux étudiants de Polytechnique Montréal lauréats de la prestigieuse bourse d’études du Canada Vanier - Polytechnique Montréal</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Deux étudiants de Polytechnique Montréal lauréats de la prestigieuse bourse d’études du Canada Vanier &amp;nbsp;&amp;nbsp; Polytechnique Montréal</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxQZVZ6a0g2VWF0RXpqdXBzSWNGSzBTLVpMc2ZCdTN2dm15NFV6NHY1UFZxdzdzazRQU3oyT2NQcG44cWVlVGVya21VSGpwSTZZb3Q4eTVxZjlCUXBwaWJUMkdiV0lIbDIzbXF5dTkzclNRRlJNbnJIeFo5ZHN1R0VMU2ctb2JPM0Rad1lqVGZqRUhvU29RTWo5UU5fRlNYMU90Ml94S2dtQzUwUmxFSmFYMmtrYk1hU0JoSVo3YzREbWZ2M1Rxb3Z3Z09DV3FTNFJOSml3NjlFZ0ZnRG51MUYzQVNrSmg4QlZv?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-92" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-92').style.display='none'">✕</button>
+                
+                <h2>La SGTM prépare son introduction en bourse et accélère ses projets pour la Coupe du monde 2030 - برلمان.كوم</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">La SGTM prépare son introduction en bourse et accélère ses projets pour la Coupe du monde 2030 &amp;nbsp;&amp;nbsp; برلمان.كوم</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNZi1RTzEzZUNidVlacFZzT2RlMUlzTjJSWWpHNEw5REwtYTJDaWRoWkYzbVpJNWNpWXNhVjBlWEZVak94RHVhVURGZkNQdmljemZOcDBIZEpaVk5LT0s3UWYxVVR5VmZjN2NCN09rd1hneVk5WHA1Nnh1RFpLU1VucGlObVRMNXBFTkpHemN0X2lGSGFnYVY4VGRhamdEZ3ExQnNIalVmbHdpT01yZWtJMHRfdHBIaWVFaDg5RQ?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-93" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-93').style.display='none'">✕</button>
+                
+                <h2>Bourses destinées aux étudiants étrangers - Campus France</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Bourses destinées aux étudiants étrangers &amp;nbsp;&amp;nbsp; Campus France</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE13M2NuejdGeEsxdERLZ2pjbjBfNXdDdDJiQVZ1VHR0RHRpVV9pbnBXZTBTYnFKbWxXMS1KR3VpM1NLclZ2MDFMN0dQb3Z6ejFIUEdOa1RaM1JEYUFlZ3lZTV9HR1VGNEpQWkVj?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+        <div id="modal-94" class="modal-overlay" onclick="if(event.target===this) this.style.display='none'">
+            <div class="modal-box">
+                <button class="modal-close" onclick="document.getElementById('modal-94').style.display='none'">✕</button>
+                
+                <h2>Eiffage se renforce au Luxembourg - Boursorama</h2>
+                <p class="modal-meta">Source : Google News (bourse génie civil) · Trouvé le 2026-07-07</p>
+                <p class="modal-summary">Eiffage se renforce au Luxembourg &amp;nbsp;&amp;nbsp; Boursorama</p>
+                <a class="apply-btn" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPOXVOM3RtS2FfTVFqN3ZyNThhMGFvaVc3ZnRQS2JNUlhyYzJ0MldfRDFPbHBRemcxNC1UUW96a1VyTDFrV0hpVjVwMW52c3RTTG5UQ0lYYllSS2x1MUNONHNacVpUUS1DTWtUMlYwUHVheHFmZDFqQ01tS0tzZmo2WVctTjVGMWNCVXQ2VEpmQ0pDVmh4d3pEb0EwRERRQzNYQ3VRRWxHeDhOTVo0T3d5MHpyZm5qZ9IBtgFBVV95cUxPOXVOM3RtS2FfTVFqN3ZyNThhMGFvaVc3ZnRQS2JNUlhyYzJ0MldfRDFPbHBRemcxNC1UUW96a1VyTDFrV0hpVjVwMW52c3RTTG5UQ0lYYllSS2x1MUNONHNacVpUUS1DTWtUMlYwUHVheHFmZDFqQ01tS0tzZmo2WVctTjVGMWNCVXQ2VEpmQ0pDVmh4d3pEb0EwRERRQzNYQ3VRRWxHeDhOTVo0T3d5MHpyZm5qZw?oc=5" target="_blank" rel="noopener">
+                    Voir l'annonce complète et postuler →
+                </a>
+            </div>
+        </div>
+        
+</body>
+</html>
